@@ -183,5 +183,10 @@
     "id": "84f09967-dc17-4ea6-9330-10589393fc1b",
     "name": "shadcn",
     "command": "npx skills add https://github.com/shadcn/ui --skill shadcn"
+  },
+  {
+    "id": "8f4d01da-df93-4c81-9840-4b77894b5d2c",
+    "name": "obra-writing-skills",
+    "command": "npx skills add https://github.com/obra/superpowers --skill writing-skills"
   }
 ]
