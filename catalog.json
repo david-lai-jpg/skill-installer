@@ -387,6 +387,6 @@
   {
     "id": "d912ded3-0b79-4fed-b12e-cb8214b38ee9",
     "name": "antfu",
-    "command": "npx skills add https://github.com/antfu/skills --skill antfu"
+    "command": "pnpx skills add antfu/skills --skill='*'"
   }
 ]
