@@ -258,5 +258,10 @@
     "id": "c56d4921-2ebc-4531-8b7f-acc8f8ccb347",
     "name": "onboard",
     "command": "npx skills add https://github.com/pbakaus/impeccable --skill onboard"
+  },
+  {
+    "id": "96cc5026-d745-4446-ac22-49c1319c5282",
+    "name": "impeccable",
+    "command": "npx skills add pbakaus/impeccable"
   }
 ]
