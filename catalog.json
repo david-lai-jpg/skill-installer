@@ -483,5 +483,10 @@
     "id": "8796fe05-0d18-4c7a-8226-ab5b7eadf6da",
     "name": "nuxt-ui",
     "command": "npx skills add https://github.com/nuxt/ui --skill nuxt-ui"
+  },
+  {
+    "id": "e546ed42-78cc-4a22-8380-d8f97c3904c5",
+    "name": "clean-code",
+    "command": "npx skills add https://github.com/sickn33/antigravity-awesome-skills --skill clean-code"
   }
 ]
