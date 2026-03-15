@@ -383,5 +383,10 @@
     "id": "1e8343c7-f6da-4cd5-b9df-100d5221f712",
     "name": "stock-analysis",
     "command": "npx skills add https://github.com/gracefullight/stock-checker --skill stock-analysis"
+  },
+  {
+    "id": "d912ded3-0b79-4fed-b12e-cb8214b38ee9",
+    "name": "antfu",
+    "command": "npx skills add https://github.com/antfu/skills --skill antfu"
   }
 ]
