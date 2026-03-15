@@ -318,5 +318,10 @@
     "id": "a1e3e059-31a8-431a-9407-33c6a280f7cc",
     "name": "debugging",
     "command": "npx skills add https://github.com/supercent-io/skills-template --skill debugging"
+  },
+  {
+    "id": "48bd7eba-a8ce-49b4-b4bb-f606528efe7f",
+    "name": "prd",
+    "command": "npx skills add https://github.com/github/awesome-copilot --skill prd"
   }
 ]
