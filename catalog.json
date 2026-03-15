@@ -98,5 +98,10 @@
     "id": "d9943ee1-6702-4319-b214-35c68ebf5d91",
     "name": "prisma-expert",
     "command": "npx skills add https://github.com/sickn33/antigravity-awesome-skills --skill prisma-expert"
+  },
+  {
+    "id": "a5d41e52-f85c-4baa-a15b-db6bc41dccad",
+    "name": "mikro-orm-v6-to-v7",
+    "command": "npx skills add https://github.com/wenerme/ai --skill mikro-orm-v6-to-v7"
   }
 ]
