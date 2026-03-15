@@ -48,5 +48,10 @@
     "id": "32707b8a-6876-4560-8453-262c7f20cd1f",
     "name": "obra-brainstorming",
     "command": "npx skills add https://github.com/obra/superpowers --skill brainstorming"
+  },
+  {
+    "id": "902e263d-c71b-4bd2-8810-b69793c97dfc",
+    "name": "pdf",
+    "command": "npx skills add https://github.com/anthropics/skills --skill pdf"
   }
 ]
