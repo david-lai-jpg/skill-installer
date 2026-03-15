@@ -53,5 +53,10 @@
     "id": "902e263d-c71b-4bd2-8810-b69793c97dfc",
     "name": "pdf",
     "command": "npx skills add https://github.com/anthropics/skills --skill pdf"
+  },
+  {
+    "id": "c914768d-84ba-45ff-9d77-d5b660473571",
+    "name": "supabase-postgres-best-practices",
+    "command": "npx skills add https://github.com/supabase/agent-skills --skill supabase-postgres-best-practices"
   }
 ]
