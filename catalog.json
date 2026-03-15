@@ -128,5 +128,10 @@
     "id": "aa0f09c8-d62b-4c77-b6e6-82945d14b03d",
     "name": "ai-image-generation",
     "command": "npx skills add https://github.com/inferen-sh/skills --skill ai-image-generation"
+  },
+  {
+    "id": "3ddff06c-bb28-42ba-95a9-7368a9926bfe",
+    "name": "obra-writing-plans",
+    "command": "npx skills add https://github.com/obra/superpowers --skill writing-plans"
   }
 ]
