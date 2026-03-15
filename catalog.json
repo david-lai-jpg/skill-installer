@@ -38,5 +38,10 @@
     "id": "95ac4a58-ff4c-4bf8-98b2-36aa9ca4306f",
     "name": "skill-creator",
     "command": "npx skills add https://github.com/anthropics/skills --skill skill-creator"
+  },
+  {
+    "id": "ff86559b-8a8d-4097-bcaf-6f465359d157",
+    "name": "ui-ux-pro-max-skill",
+    "command": "npx skills add https://github.com/nextlevelbuilder/ui-ux-pro-max-skill --skill ui-ux-pro-max"
   }
 ]
