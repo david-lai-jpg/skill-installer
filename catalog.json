@@ -168,5 +168,10 @@
     "id": "e45542e1-cd52-48cc-ad4e-557bdf45a40a",
     "name": "obra-subagent-driven-development",
     "command": "npx skills add https://github.com/obra/superpowers --skill subagent-driven-development"
+  },
+  {
+    "id": "e9dffbbe-29bd-4f00-9953-83a20d8d82ba",
+    "name": "tailwind-design-system",
+    "command": "npx skills add https://github.com/wshobson/agents --skill tailwind-design-system"
   }
 ]
