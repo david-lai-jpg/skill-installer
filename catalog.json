@@ -428,5 +428,10 @@
     "id": "1d3cd73e-66d9-4803-af26-3f4c2b165084",
     "name": "obsidian-cli",
     "command": "npx skills add https://github.com/kepano/obsidian-skills --skill obsidian-cli"
+  },
+  {
+    "id": "87cdea59-273b-406f-a263-3af281a972f8",
+    "name": "lighthouse-performance",
+    "command": "npx skills add https://github.com/addyosmani/web-quality-skills --skill performance"
   }
 ]
