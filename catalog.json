@@ -103,5 +103,10 @@
     "id": "a5d41e52-f85c-4baa-a15b-db6bc41dccad",
     "name": "mikro-orm-v6-to-v7",
     "command": "npx skills add https://github.com/wenerme/ai --skill mikro-orm-v6-to-v7"
+  },
+  {
+    "id": "f2ce68d2-6047-401c-9c64-1d5a2985dca3",
+    "name": "mikro-orm-entity",
+    "command": "npx skills add https://github.com/bloominggrace/create-fullstack-service --skill mikro-orm-entity"
   }
 ]
