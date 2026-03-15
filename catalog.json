@@ -268,5 +268,10 @@
     "id": "ee150275-f10d-4b58-b241-2e4771298492",
     "name": "ui-quieter",
     "command": "npx skills add https://github.com/pbakaus/impeccable --skill quieter"
+  },
+  {
+    "id": "2fcb34d0-6d70-4171-b603-6f1d2e91cc94",
+    "name": "code-review",
+    "command": "npx skills add https://github.com/supercent-io/skills-template --skill code-review"
   }
 ]
