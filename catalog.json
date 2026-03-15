@@ -328,5 +328,10 @@
     "id": "8d750919-7da3-4eb9-b6d3-19edc082738e",
     "name": "self-improving-agent",
     "command": "npx skills add https://github.com/charon-fan/agent-playbook --skill self-improving-agent"
+  },
+  {
+    "id": "b7e5fc23-47e3-4265-9214-c8e1ef299f06",
+    "name": "refactor",
+    "command": "npx skills add https://github.com/github/awesome-copilot --skill refactor"
   }
 ]
