@@ -193,5 +193,10 @@
     "id": "028d6b2f-4d1e-4a94-98d5-48b0f8cbd152",
     "name": "obra-using-git-worktrees",
     "command": "npx skills add https://github.com/obra/superpowers --skill using-git-worktrees"
+  },
+  {
+    "id": "dfd1cc91-8817-4dbc-b941-4bf737ae85ff",
+    "name": "obra-dispatching-parallel-agents",
+    "command": "npx skills add https://github.com/obra/superpowers --skill dispatching-parallel-agents"
   }
 ]
