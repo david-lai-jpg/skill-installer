@@ -263,5 +263,10 @@
     "id": "96cc5026-d745-4446-ac22-49c1319c5282",
     "name": "impeccable",
     "command": "npx skills add pbakaus/impeccable"
+  },
+  {
+    "id": "ee150275-f10d-4b58-b241-2e4771298492",
+    "name": "ui-quieter",
+    "command": "npx skills add https://github.com/pbakaus/impeccable --skill quieter"
   }
 ]
