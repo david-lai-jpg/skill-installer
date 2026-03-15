@@ -408,5 +408,10 @@
     "id": "a49bffc4-0549-47a6-976f-bea20bbcf9fd",
     "name": "noob-mode",
     "command": "npx skills add https://github.com/github/awesome-copilot --skill noob-mode"
+  },
+  {
+    "id": "f6ebf817-dafb-48c6-8e17-2960be3e4be8",
+    "name": "implement-figma-design",
+    "command": "npx skills add https://github.com/figma/mcp-server-guide --skill implement-design"
   }
 ]
