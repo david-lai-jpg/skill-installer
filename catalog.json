@@ -358,5 +358,10 @@
     "id": "06a8af5d-689b-41fd-8d38-102dbc303741",
     "name": "postgresql-table-design",
     "command": "npx skills add https://github.com/wshobson/agents --skill postgresql-table-design"
+  },
+  {
+    "id": "b35e033d-bf3e-4d63-9514-31b88df34d15",
+    "name": "playwright-cli",
+    "command": "npx skills add https://github.com/microsoft/playwright-cli --skill playwright-cli"
   }
 ]
