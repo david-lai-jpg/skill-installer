@@ -163,5 +163,10 @@
     "id": "803edb38-4f99-4556-b3ae-8f3d095e5044",
     "name": "mcp-builder",
     "command": "npx skills add https://github.com/anthropics/skills --skill mcp-builder"
+  },
+  {
+    "id": "e45542e1-cd52-48cc-ad4e-557bdf45a40a",
+    "name": "obra-subagent-driven-development",
+    "command": "npx skills add https://github.com/obra/superpowers --skill subagent-driven-development"
   }
 ]
