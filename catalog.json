@@ -88,5 +88,10 @@
     "id": "07f99730-12f1-4692-b6a6-071945ff1b9d",
     "name": "prisma-client-api",
     "command": "npx skills add https://github.com/prisma/skills --skill prisma-client-api"
+  },
+  {
+    "id": "6159fd6e-3337-4b03-9737-25a2e546fe58",
+    "name": "prisma-database-setup",
+    "command": "npx skills add https://github.com/prisma/skills --skill prisma-database-setup"
   }
 ]
