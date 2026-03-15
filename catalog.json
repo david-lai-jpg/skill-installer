@@ -78,5 +78,10 @@
     "id": "99b17738-ae0a-45a4-97b5-d59e682f94c2",
     "name": "prisma-cli",
     "command": "npx skills add https://github.com/prisma/skills --skill prisma-cli"
+  },
+  {
+    "id": "6a8d04e7-0fe1-418f-b73d-0291e761f5f7",
+    "name": "visual-explainer",
+    "command": "npx skills add https://github.com/nicobailon/visual-explainer --skill visual-explainer"
   }
 ]
