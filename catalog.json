@@ -473,5 +473,10 @@
     "id": "fe52eebd-74c6-4ab2-861c-e7f7433552d1",
     "name": "seo",
     "command": "npx skills add https://github.com/addyosmani/web-quality-skills --skill seo"
+  },
+  {
+    "id": "83fe1375-9450-483a-9a22-0238c569dc76",
+    "name": "humanizer",
+    "command": "npx skills add https://github.com/softaworks/agent-toolkit --skill humanizer"
   }
 ]
