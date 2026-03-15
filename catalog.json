@@ -68,5 +68,10 @@
     "id": "35fda84c-dcf6-4914-ac37-0c1c00766c31",
     "name": "nestjs-best-practices",
     "command": "npx skills add https://github.com/kadajett/agent-nestjs-skills --skill nestjs-best-practices"
+  },
+  {
+    "id": "ac99e32c-dcd0-4c01-9ff9-2adf1fa60db5",
+    "name": "prisma-postgres",
+    "command": "npx skills add https://github.com/prisma/skills --skill prisma-postgres"
   }
 ]
