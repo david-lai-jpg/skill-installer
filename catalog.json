@@ -133,5 +133,10 @@
     "id": "3ddff06c-bb28-42ba-95a9-7368a9926bfe",
     "name": "obra-writing-plans",
     "command": "npx skills add https://github.com/obra/superpowers --skill writing-plans"
+  },
+  {
+    "id": "50b4a28a-295c-4ce1-b0bf-c115f7085303",
+    "name": "xlsx",
+    "command": "npx skills add https://github.com/anthropics/skills --skill xlsx"
   }
 ]
