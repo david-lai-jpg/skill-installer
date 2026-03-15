@@ -118,5 +118,10 @@
     "id": "b974048f-8733-472d-a821-185363ee2924",
     "name": "docx",
     "command": "npx skills add https://github.com/anthropics/skills --skill docx"
+  },
+  {
+    "id": "aaaa2d55-80b7-406e-9a03-ac1d5190af76",
+    "name": "ai-image-generation-installation",
+    "command": "npx skills add inference-sh/skills@agent-tools"
   }
 ]
