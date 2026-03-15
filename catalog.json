@@ -338,5 +338,10 @@
     "id": "4a4745a8-acbd-4e08-bb09-76dd1fae80f8",
     "name": "architecture-patterns",
     "command": "npx skills add https://github.com/wshobson/agents --skill architecture-patterns"
+  },
+  {
+    "id": "82a68b63-44c2-445f-b7d0-968d3633e042",
+    "name": "frontend-design-system",
+    "command": "npx skills add https://github.com/supercent-io/skills-template --skill frontend-design-system"
   }
 ]
