@@ -143,5 +143,10 @@
     "id": "b3f268d7-4e4d-4d26-807b-e5899c3cc68f",
     "name": "obra-test-driven-development",
     "command": "npx skills add https://github.com/obra/superpowers --skill test-driven-development"
+  },
+  {
+    "id": "4be45923-2599-46c8-942a-e268f5ac7aa8",
+    "name": "obra-executing-plans",
+    "command": "npx skills add https://github.com/obra/superpowers --skill executing-plans"
   }
 ]
