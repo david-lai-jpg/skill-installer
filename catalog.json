@@ -343,5 +343,10 @@
     "id": "82a68b63-44c2-445f-b7d0-968d3633e042",
     "name": "frontend-design-system",
     "command": "npx skills add https://github.com/supercent-io/skills-template --skill frontend-design-system"
+  },
+  {
+    "id": "f5668f00-c795-47f2-b0a3-630f11bd1ac7",
+    "name": "humanizer-zh",
+    "command": "npx skills add https://github.com/op7418/humanizer-zh --skill humanizer-zh"
   }
 ]
