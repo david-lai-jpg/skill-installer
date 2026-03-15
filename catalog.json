@@ -273,5 +273,10 @@
     "id": "2fcb34d0-6d70-4171-b603-6f1d2e91cc94",
     "name": "code-review",
     "command": "npx skills add https://github.com/supercent-io/skills-template --skill code-review"
+  },
+  {
+    "id": "6164a49f-480a-4bce-a11e-c714189e29f5",
+    "name": "shadcn-ui",
+    "command": "npx skills add https://github.com/google-labs-code/stitch-skills --skill shadcn-ui"
   }
 ]
