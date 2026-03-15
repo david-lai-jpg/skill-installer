@@ -43,5 +43,10 @@
     "id": "ff86559b-8a8d-4097-bcaf-6f465359d157",
     "name": "ui-ux-pro-max-skill",
     "command": "npx skills add https://github.com/nextlevelbuilder/ui-ux-pro-max-skill --skill ui-ux-pro-max"
+  },
+  {
+    "id": "32707b8a-6876-4560-8453-262c7f20cd1f",
+    "name": "obra-brainstorming",
+    "command": "npx skills add https://github.com/obra/superpowers --skill brainstorming"
   }
 ]
