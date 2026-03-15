@@ -363,5 +363,10 @@
     "id": "b35e033d-bf3e-4d63-9514-31b88df34d15",
     "name": "playwright-cli",
     "command": "npx skills add https://github.com/microsoft/playwright-cli --skill playwright-cli"
+  },
+  {
+    "id": "469626a5-15ac-43fa-8991-1407e48c0ae2",
+    "name": "obra-remembering-conversations",
+    "command": "npx skills add https://github.com/obra/episodic-memory --skill remembering-conversations"
   }
 ]
