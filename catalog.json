@@ -413,5 +413,10 @@
     "id": "f6ebf817-dafb-48c6-8e17-2960be3e4be8",
     "name": "implement-figma-design",
     "command": "npx skills add https://github.com/figma/mcp-server-guide --skill implement-design"
+  },
+  {
+    "id": "a183ff8b-fe78-4257-8487-6b651447259c",
+    "name": "design-system-patterns",
+    "command": "npx skills add https://github.com/wshobson/agents --skill design-system-patterns"
   }
 ]
