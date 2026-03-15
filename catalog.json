@@ -388,5 +388,10 @@
     "id": "d912ded3-0b79-4fed-b12e-cb8214b38ee9",
     "name": "antfu",
     "command": "pnpx skills add antfu/skills --skill='*'"
+  },
+  {
+    "id": "be9f727f-f552-4a37-985b-582109da6d13",
+    "name": "sql-optimization-pattern",
+    "command": "npx skills add https://github.com/wshobson/agents --skill sql-optimization-patterns"
   }
 ]
