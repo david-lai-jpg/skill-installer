@@ -468,5 +468,10 @@
     "id": "bd143d2f-92dc-4827-9e61-5e5b481b62be",
     "name": "vue-debug-guides",
     "command": "npx skills add https://github.com/vuejs-ai/skills --skill vue-debug-guides"
+  },
+  {
+    "id": "fe52eebd-74c6-4ab2-861c-e7f7433552d1",
+    "name": "seo",
+    "command": "npx skills add https://github.com/addyosmani/web-quality-skills --skill seo"
   }
 ]
