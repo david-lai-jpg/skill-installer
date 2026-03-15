@@ -298,5 +298,10 @@
     "id": "42436fba-68d8-442d-b14d-f3c6d65840ad",
     "name": "task-planning",
     "command": "npx skills add https://github.com/supercent-io/skills-template --skill task-planning"
+  },
+  {
+    "id": "55bff713-5315-4338-8d01-b37e22a25150",
+    "name": "responsive-design",
+    "command": "npx skills add https://github.com/supercent-io/skills-template --skill responsive-design"
   }
 ]
