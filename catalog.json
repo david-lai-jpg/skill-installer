@@ -198,5 +198,10 @@
     "id": "dfd1cc91-8817-4dbc-b941-4bf737ae85ff",
     "name": "obra-dispatching-parallel-agents",
     "command": "npx skills add https://github.com/obra/superpowers --skill dispatching-parallel-agents"
+  },
+  {
+    "id": "cbc9c571-d72b-4429-bf14-46f5034cf215",
+    "name": "obra-finishing-a-development-branch",
+    "command": "npx skills add https://github.com/obra/superpowers --skill finishing-a-development-branch"
   }
 ]
