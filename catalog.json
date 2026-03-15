@@ -123,5 +123,10 @@
     "id": "aaaa2d55-80b7-406e-9a03-ac1d5190af76",
     "name": "ai-image-generation-installation",
     "command": "npx skills add inference-sh/skills@agent-tools"
+  },
+  {
+    "id": "aa0f09c8-d62b-4c77-b6e6-82945d14b03d",
+    "name": "ai-image-generation",
+    "command": "npx skills add https://github.com/inferen-sh/skills --skill ai-image-generation"
   }
 ]
