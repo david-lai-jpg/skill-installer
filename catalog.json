@@ -493,5 +493,10 @@
     "id": "e3f93bf2-2a94-455a-b4b8-1ee89f45046a",
     "name": "resume-writer",
     "command": "npx skills add resumx/skills"
+  },
+  {
+    "id": "a04e37de-82f9-4398-bae7-8b6e5d565c0d",
+    "name": "docs-translator",
+    "command": "npx skills add https://github.com/github/awesome-copilot --skill mkdocs-translations"
   }
 ]
