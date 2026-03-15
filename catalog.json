@@ -348,5 +348,10 @@
     "id": "f5668f00-c795-47f2-b0a3-630f11bd1ac7",
     "name": "humanizer-zh",
     "command": "npx skills add https://github.com/op7418/humanizer-zh --skill humanizer-zh"
+  },
+  {
+    "id": "7a0918b9-47c7-4d06-a3d4-025a871dfad9",
+    "name": "prompt-engineering-patterns",
+    "command": "npx skills add https://github.com/wshobson/agents --skill prompt-engineering-patterns"
   }
 ]
