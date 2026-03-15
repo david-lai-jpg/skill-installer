@@ -313,5 +313,10 @@
     "id": "82fa81eb-6c1b-467b-b227-47245e2ff1b5",
     "name": "codebase-search",
     "command": "npx skills add https://github.com/supercent-io/skills-template --skill codebase-search"
+  },
+  {
+    "id": "a1e3e059-31a8-431a-9407-33c6a280f7cc",
+    "name": "debugging",
+    "command": "npx skills add https://github.com/supercent-io/skills-template --skill debugging"
   }
 ]
