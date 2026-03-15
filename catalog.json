@@ -93,5 +93,10 @@
     "id": "6159fd6e-3337-4b03-9737-25a2e546fe58",
     "name": "prisma-database-setup",
     "command": "npx skills add https://github.com/prisma/skills --skill prisma-database-setup"
+  },
+  {
+    "id": "d9943ee1-6702-4319-b214-35c68ebf5d91",
+    "name": "prisma-expert",
+    "command": "npx skills add https://github.com/sickn33/antigravity-awesome-skills --skill prisma-expert"
   }
 ]
