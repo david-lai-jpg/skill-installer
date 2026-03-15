@@ -138,5 +138,10 @@
     "id": "50b4a28a-295c-4ce1-b0bf-c115f7085303",
     "name": "xlsx",
     "command": "npx skills add https://github.com/anthropics/skills --skill xlsx"
+  },
+  {
+    "id": "b3f268d7-4e4d-4d26-807b-e5899c3cc68f",
+    "name": "obra-test-driven-development",
+    "command": "npx skills add https://github.com/obra/superpowers --skill test-driven-development"
   }
 ]
