@@ -333,5 +333,10 @@
     "id": "b7e5fc23-47e3-4265-9214-c8e1ef299f06",
     "name": "refactor",
     "command": "npx skills add https://github.com/github/awesome-copilot --skill refactor"
+  },
+  {
+    "id": "4a4745a8-acbd-4e08-bb09-76dd1fae80f8",
+    "name": "architecture-patterns",
+    "command": "npx skills add https://github.com/wshobson/agents --skill architecture-patterns"
   }
 ]
