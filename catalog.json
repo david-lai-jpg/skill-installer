@@ -223,5 +223,10 @@
     "id": "c85e06dd-2b66-4739-9b0d-64e71d870fa0",
     "name": "theme-factory",
     "command": "npx skills add https://github.com/anthropics/skills --skill theme-factory"
+  },
+  {
+    "id": "98cf01c9-d1cc-4689-a4c8-90c3438e236e",
+    "name": "algorithmic-art",
+    "command": "npx skills add https://github.com/anthropics/skills --skill algorithmic-art"
   }
 ]
