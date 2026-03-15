@@ -218,5 +218,10 @@
     "id": "57b22333-11b1-4064-9390-c27cda48d9c6",
     "name": "system-design-md",
     "command": "npx skills add https://github.com/google-labs-code/stitch-skills --skill design-md"
+  },
+  {
+    "id": "c85e06dd-2b66-4739-9b0d-64e71d870fa0",
+    "name": "theme-factory",
+    "command": "npx skills add https://github.com/anthropics/skills --skill theme-factory"
   }
 ]
