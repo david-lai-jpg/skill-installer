@@ -28,5 +28,10 @@
     "id": "be3ac778-5f31-4186-8cfb-412c9de5f3db",
     "name": "agent-browser",
     "command": "npx skills add https://github.com/vercel-labs/agent-browser --skill agent-browser"
+  },
+  {
+    "id": "9ed3c21c-5938-4c28-a858-239917c9367e",
+    "name": "vercel-react-composition-patterns",
+    "command": "npx skills add https://github.com/vercel-labs/agent-skills --skill vercel-composition-patterns"
   }
 ]
