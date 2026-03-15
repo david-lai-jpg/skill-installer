@@ -238,5 +238,10 @@
     "id": "3025712d-b8b0-4336-9938-103e6138795c",
     "name": "typescript-advanced-types",
     "command": "npx skills add https://github.com/wshobson/agents --skill typescript-advanced-types"
+  },
+  {
+    "id": "db01eb87-bbb8-4022-abdb-8f0713e60137",
+    "name": "enhance-prompt",
+    "command": "npx skills add https://github.com/google-labs-code/stitch-skills --skill enhance-prompt"
   }
 ]
