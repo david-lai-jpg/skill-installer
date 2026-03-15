@@ -463,5 +463,10 @@
     "id": "bd9cdcc7-4acf-4ec4-9aee-9e73fb587efa",
     "name": "vue-pinia-best-practices",
     "command": "npx skills add https://github.com/vuejs-ai/skills --skill vue-pinia-best-practices"
+  },
+  {
+    "id": "bd143d2f-92dc-4827-9e61-5e5b481b62be",
+    "name": "vue-debug-guides",
+    "command": "npx skills add https://github.com/vuejs-ai/skills --skill vue-debug-guides"
   }
 ]
