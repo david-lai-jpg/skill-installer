@@ -148,5 +148,10 @@
     "id": "4be45923-2599-46c8-942a-e268f5ac7aa8",
     "name": "obra-executing-plans",
     "command": "npx skills add https://github.com/obra/superpowers --skill executing-plans"
+  },
+  {
+    "id": "42b319c3-e01a-40bf-997b-24bca1d7cfdf",
+    "name": "obra-requesting-code-review",
+    "command": "npx skills add https://github.com/obra/superpowers --skill requesting-code-review"
   }
 ]
