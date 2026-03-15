@@ -433,5 +433,10 @@
     "id": "87cdea59-273b-406f-a263-3af281a972f8",
     "name": "lighthouse-performance",
     "command": "npx skills add https://github.com/addyosmani/web-quality-skills --skill performance"
+  },
+  {
+    "id": "caa75fb2-b87e-44a9-a6bb-d3a6c06ca652",
+    "name": "vue-best-practices",
+    "command": "npx skills add https://github.com/vuejs-ai/skills --skill vue-best-practices"
   }
 ]
