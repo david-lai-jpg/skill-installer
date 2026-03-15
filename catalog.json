@@ -108,5 +108,10 @@
     "id": "f2ce68d2-6047-401c-9c64-1d5a2985dca3",
     "name": "mikro-orm-entity",
     "command": "npx skills add https://github.com/bloominggrace/create-fullstack-service --skill mikro-orm-entity"
+  },
+  {
+    "id": "b97aafdc-62a9-4904-a3f8-7aeff1e9d93d",
+    "name": "pptx",
+    "command": "npx skills add https://github.com/anthropics/skills --skill pptx"
   }
 ]
