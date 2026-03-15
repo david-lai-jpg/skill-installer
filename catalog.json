@@ -278,5 +278,10 @@
     "id": "6164a49f-480a-4bce-a11e-c714189e29f5",
     "name": "shadcn-ui",
     "command": "npx skills add https://github.com/google-labs-code/stitch-skills --skill shadcn-ui"
+  },
+  {
+    "id": "55b77190-dc71-4455-be7d-2ebc0f0b8d99",
+    "name": "gh-cli",
+    "command": "npx skills add https://github.com/github/awesome-copilot --skill gh-cli"
   }
 ]
