@@ -288,5 +288,10 @@
     "id": "07676016-ea66-4173-a067-efc73d59dc47",
     "name": "code-refactoring",
     "command": "npx skills add https://github.com/supercent-io/skills-template --skill code-refactoring"
+  },
+  {
+    "id": "31b05122-ccbe-49c6-aa74-46b2d89f9499",
+    "name": "turborepo",
+    "command": "npx skills add https://github.com/vercel/turborepo --skill turborepo"
   }
 ]
