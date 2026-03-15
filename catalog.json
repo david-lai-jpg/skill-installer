@@ -33,5 +33,10 @@
     "id": "9ed3c21c-5938-4c28-a858-239917c9367e",
     "name": "vercel-react-composition-patterns",
     "command": "npx skills add https://github.com/vercel-labs/agent-skills --skill vercel-composition-patterns"
+  },
+  {
+    "id": "95ac4a58-ff4c-4bf8-98b2-36aa9ca4306f",
+    "name": "skill-creator",
+    "command": "npx skills add https://github.com/anthropics/skills --skill skill-creator"
   }
 ]
