@@ -493,5 +493,10 @@
     "id": "d49998d2-b7b2-49b5-a9d0-27ea87612ad2",
     "name": "code-reviewer",
     "command": "npx skills add https://github.com/google-gemini/gemini-cli --skill code-reviewer"
+  },
+  {
+    "id": "e3f93bf2-2a94-455a-b4b8-1ee89f45046a",
+    "name": "resume-writer",
+    "command": "npx skills add resumx/skills"
   }
 ]
