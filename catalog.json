@@ -73,5 +73,10 @@
     "id": "ac99e32c-dcd0-4c01-9ff9-2adf1fa60db5",
     "name": "prisma-postgres",
     "command": "npx skills add https://github.com/prisma/skills --skill prisma-postgres"
+  },
+  {
+    "id": "99b17738-ae0a-45a4-97b5-d59e682f94c2",
+    "name": "prisma-cli",
+    "command": "npx skills add https://github.com/prisma/skills --skill prisma-cli"
   }
 ]
