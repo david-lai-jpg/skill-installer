@@ -8,5 +8,10 @@
     "id": "7125c0df-0c03-4b05-8f83-78e30cba3787",
     "name": "vercel-react-best-practices",
     "command": "npx skills add https://github.com/vercel-labs/agent-skills --skill vercel-react-best-practices"
+  },
+  {
+    "id": "8020c80a-58e4-4533-9b5d-4d49b0840a61",
+    "name": "web-design-guidelines",
+    "command": "npx skills add https://github.com/vercel-labs/agent-skills --skill web-design-guidelines"
   }
 ]
