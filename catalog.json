@@ -373,5 +373,10 @@
     "id": "d436d64d-25b0-404a-8fde-585c7c2ce2c1",
     "name": "electron",
     "command": "npx skills add https://github.com/vercel-labs/agent-browser --skill electron"
+  },
+  {
+    "id": "6a2f9ce2-cf07-4c64-a953-069942187989",
+    "name": "docker-expert",
+    "command": "npx skills add https://github.com/sickn33/antigravity-awesome-skills --skill docker-expert"
   }
 ]
