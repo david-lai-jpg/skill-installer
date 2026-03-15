@@ -443,5 +443,10 @@
     "id": "8fabd05e-067c-445b-b596-dfc61e9dbbb8",
     "name": "auth-implementation-patterns",
     "command": "npx skills add https://github.com/wshobson/agents --skill auth-implementation-patterns"
+  },
+  {
+    "id": "6e4d3e43-24fb-4ee1-b02a-16ba4a25c15d",
+    "name": "architecture-decision-records",
+    "command": "npx skills add https://github.com/wshobson/agents --skill architecture-decision-records"
   }
 ]
