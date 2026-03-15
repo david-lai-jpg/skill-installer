@@ -63,5 +63,10 @@
     "id": "a05c9d36-bf34-4fa4-b555-13c8b0a1da48",
     "name": "next-best-practices",
     "command": "npx skills add https://github.com/vercel-labs/next-skills --skill next-best-practices"
+  },
+  {
+    "id": "35fda84c-dcf6-4914-ac37-0c1c00766c31",
+    "name": "nestjs-best-practices",
+    "command": "npx skills add https://github.com/kadajett/agent-nestjs-skills --skill nestjs-best-practices"
   }
 ]
