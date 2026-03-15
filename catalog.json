@@ -438,5 +438,10 @@
     "id": "caa75fb2-b87e-44a9-a6bb-d3a6c06ca652",
     "name": "vue-best-practices",
     "command": "npx skills add https://github.com/vuejs-ai/skills --skill vue-best-practices"
+  },
+  {
+    "id": "8fabd05e-067c-445b-b596-dfc61e9dbbb8",
+    "name": "auth-implementation-patterns",
+    "command": "npx skills add https://github.com/wshobson/agents --skill auth-implementation-patterns"
   }
 ]
