@@ -213,5 +213,10 @@
     "id": "ccd15538-5593-41fa-8711-e2b7ddf95ba6",
     "name": "doc-coauthoring",
     "command": "npx skills add https://github.com/anthropics/skills --skill doc-coauthoring"
+  },
+  {
+    "id": "57b22333-11b1-4064-9390-c27cda48d9c6",
+    "name": "system-design-md",
+    "command": "npx skills add https://github.com/google-labs-code/stitch-skills --skill design-md"
   }
 ]
