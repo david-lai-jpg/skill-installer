@@ -488,5 +488,10 @@
     "id": "e546ed42-78cc-4a22-8380-d8f97c3904c5",
     "name": "clean-code",
     "command": "npx skills add https://github.com/sickn33/antigravity-awesome-skills --skill clean-code"
+  },
+  {
+    "id": "d49998d2-b7b2-49b5-a9d0-27ea87612ad2",
+    "name": "code-reviewer",
+    "command": "npx skills add https://github.com/google-gemini/gemini-cli --skill code-reviewer"
   }
 ]
