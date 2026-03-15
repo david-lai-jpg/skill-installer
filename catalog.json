@@ -178,5 +178,10 @@
     "id": "931aa873-091f-44cc-bdee-666eee388ba1",
     "name": "obra-verification-before-completion",
     "command": "npx skills add https://github.com/obra/superpowers --skill verification-before-completion"
+  },
+  {
+    "id": "84f09967-dc17-4ea6-9330-10589393fc1b",
+    "name": "shadcn",
+    "command": "npx skills add https://github.com/shadcn/ui --skill shadcn"
   }
 ]
