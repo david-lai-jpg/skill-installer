@@ -3,5 +3,10 @@
     "id": "f6ae1bd7-50eb-41f1-b09c-e8327624f8a2",
     "name": "find-skills",
     "command": "npx skills add https://github.com/vercel-labs/skills --skill find-skills"
+  },
+  {
+    "id": "7125c0df-0c03-4b05-8f83-78e30cba3787",
+    "name": "vercel-react-best-practices",
+    "command": "npx skills add https://github.com/vercel-labs/agent-skills --skill vercel-react-best-practices"
   }
 ]
