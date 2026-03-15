@@ -1,0 +1,17 @@
+{
+  "name": "skill-installer",
+  "version": "1.0.0",
+  "description": "Catalog and install Claude Code skills",
+  "type": "module",
+  "bin": {
+    "skill-installer": "./bin/cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^7.0.0",
+    "mri": "^1.2.0",
+    "picocolors": "^1.1.0"
+  }
+}
