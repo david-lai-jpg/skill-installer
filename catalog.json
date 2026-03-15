@@ -113,5 +113,10 @@
     "id": "b97aafdc-62a9-4904-a3f8-7aeff1e9d93d",
     "name": "pptx",
     "command": "npx skills add https://github.com/anthropics/skills --skill pptx"
+  },
+  {
+    "id": "b974048f-8733-472d-a821-185363ee2924",
+    "name": "docx",
+    "command": "npx skills add https://github.com/anthropics/skills --skill docx"
   }
 ]
