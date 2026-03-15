@@ -243,5 +243,10 @@
     "id": "db01eb87-bbb8-4022-abdb-8f0713e60137",
     "name": "enhance-prompt",
     "command": "npx skills add https://github.com/google-labs-code/stitch-skills --skill enhance-prompt"
+  },
+  {
+    "id": "27fefe30-feac-4619-8194-44c21251a1fc",
+    "name": "ui-polish",
+    "command": "npx skills add https://github.com/pbakaus/impeccable --skill polish"
   }
 ]
