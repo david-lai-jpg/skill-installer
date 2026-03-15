@@ -393,5 +393,10 @@
     "id": "be9f727f-f552-4a37-985b-582109da6d13",
     "name": "sql-optimization-pattern",
     "command": "npx skills add https://github.com/wshobson/agents --skill sql-optimization-patterns"
+  },
+  {
+    "id": "ba31d1d8-9fd8-486b-8da3-e13d37fb7a87",
+    "name": "angular-component",
+    "command": "npx skills add https://github.com/analogjs/angular-skills --skill angular-component"
   }
 ]
