@@ -478,5 +478,10 @@
     "id": "83fe1375-9450-483a-9a22-0238c569dc76",
     "name": "humanizer",
     "command": "npx skills add https://github.com/softaworks/agent-toolkit --skill humanizer"
+  },
+  {
+    "id": "8796fe05-0d18-4c7a-8226-ab5b7eadf6da",
+    "name": "nuxt-ui",
+    "command": "npx skills add https://github.com/nuxt/ui --skill nuxt-ui"
   }
 ]
