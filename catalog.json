@@ -233,5 +233,10 @@
     "id": "0d999d43-647a-4dd6-8ab6-7153c2f935f6",
     "name": "git-commit",
     "command": "npx skills add https://github.com/github/awesome-copilot --skill git-commit"
+  },
+  {
+    "id": "3025712d-b8b0-4336-9938-103e6138795c",
+    "name": "typescript-advanced-types",
+    "command": "npx skills add https://github.com/wshobson/agents --skill typescript-advanced-types"
   }
 ]
