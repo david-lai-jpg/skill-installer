@@ -18,5 +18,10 @@
     "id": "84d947f7-0b8b-40d2-80a8-1ae9d0295d21",
     "name": "frontend-design",
     "command": "npx skills add https://github.com/anthropics/skills --skill frontend-design"
+  },
+  {
+    "id": "74685d55-7bc2-40c7-b6b4-988e5c2ffa32",
+    "name": "remotion-best-practices",
+    "command": "npx skills add https://github.com/remotion-dev/skills --skill remotion-best-practices"
   }
 ]
