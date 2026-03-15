@@ -403,5 +403,10 @@
     "id": "8c992085-16d5-4110-98bc-a53561cd532e",
     "name": "mentoring-junior",
     "command": "npx skills add https://github.com/github/awesome-copilot --skill mentoring-juniors"
+  },
+  {
+    "id": "a49bffc4-0549-47a6-976f-bea20bbcf9fd",
+    "name": "noob-mode",
+    "command": "npx skills add https://github.com/github/awesome-copilot --skill noob-mode"
   }
 ]
