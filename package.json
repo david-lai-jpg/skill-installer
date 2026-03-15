@@ -1,8 +1,20 @@
 {
   "name": "skill-installer",
   "version": "1.0.0",
-  "description": "Catalog and install Claude Code skills",
+  "description": "CLI tool to manage a personal catalog of Claude Code skill installation commands — build your collection once, install anywhere",
   "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/david-lai-jpg/skill-installer.git"
+  },
+  "keywords": [
+    "claude-code",
+    "skills",
+    "cli",
+    "installer",
+    "catalog"
+  ],
   "bin": {
     "skill-installer": "./bin/cli.js"
   },
