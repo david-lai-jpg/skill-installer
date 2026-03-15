@@ -293,5 +293,10 @@
     "id": "31b05122-ccbe-49c6-aa74-46b2d89f9499",
     "name": "turborepo",
     "command": "npx skills add https://github.com/vercel/turborepo --skill turborepo"
+  },
+  {
+    "id": "42436fba-68d8-442d-b14d-f3c6d65840ad",
+    "name": "task-planning",
+    "command": "npx skills add https://github.com/supercent-io/skills-template --skill task-planning"
   }
 ]
