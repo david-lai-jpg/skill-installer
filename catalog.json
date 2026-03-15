@@ -248,5 +248,10 @@
     "id": "27fefe30-feac-4619-8194-44c21251a1fc",
     "name": "ui-polish",
     "command": "npx skills add https://github.com/pbakaus/impeccable --skill polish"
+  },
+  {
+    "id": "9e204026-50f6-44cc-a833-7065515d9a5d",
+    "name": "ui-critique",
+    "command": "npx skills add https://github.com/pbakaus/impeccable --skill critique"
   }
 ]
