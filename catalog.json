@@ -368,5 +368,10 @@
     "id": "469626a5-15ac-43fa-8991-1407e48c0ae2",
     "name": "obra-remembering-conversations",
     "command": "npx skills add https://github.com/obra/episodic-memory --skill remembering-conversations"
+  },
+  {
+    "id": "d436d64d-25b0-404a-8fde-585c7c2ce2c1",
+    "name": "electron",
+    "command": "npx skills add https://github.com/vercel-labs/agent-browser --skill electron"
   }
 ]
