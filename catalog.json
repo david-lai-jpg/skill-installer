@@ -303,5 +303,10 @@
     "id": "55bff713-5315-4338-8d01-b37e22a25150",
     "name": "responsive-design",
     "command": "npx skills add https://github.com/supercent-io/skills-template --skill responsive-design"
+  },
+  {
+    "id": "93b55537-be33-4f3f-9b27-cd89874d7e58",
+    "name": "copilot-coding-agent",
+    "command": "npx skills add https://github.com/supercent-io/skills-template --skill copilot-coding-agent"
   }
 ]
