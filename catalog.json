@@ -203,5 +203,10 @@
     "id": "cbc9c571-d72b-4429-bf14-46f5034cf215",
     "name": "obra-finishing-a-development-branch",
     "command": "npx skills add https://github.com/obra/superpowers --skill finishing-a-development-branch"
+  },
+  {
+    "id": "da4b3bfc-775c-4bac-af67-65f0a748ba20",
+    "name": "react:components",
+    "command": "npx skills add https://github.com/google-labs-code/stitch-skills --skill react:components"
   }
 ]
