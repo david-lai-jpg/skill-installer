@@ -398,5 +398,10 @@
     "id": "ba31d1d8-9fd8-486b-8da3-e13d37fb7a87",
     "name": "angular-component",
     "command": "npx skills add https://github.com/analogjs/angular-skills --skill angular-component"
+  },
+  {
+    "id": "8c992085-16d5-4110-98bc-a53561cd532e",
+    "name": "mentoring-junior",
+    "command": "npx skills add https://github.com/github/awesome-copilot --skill mentoring-juniors"
   }
 ]
