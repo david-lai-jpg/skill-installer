@@ -418,5 +418,10 @@
     "id": "a183ff8b-fe78-4257-8487-6b651447259c",
     "name": "design-system-patterns",
     "command": "npx skills add https://github.com/wshobson/agents --skill design-system-patterns"
+  },
+  {
+    "id": "d8c01138-6b2b-4c14-9c82-026079c77fc0",
+    "name": "monorepo-management",
+    "command": "npx skills add https://github.com/wshobson/agents --skill monorepo-management"
   }
 ]
