@@ -423,5 +423,10 @@
     "id": "d8c01138-6b2b-4c14-9c82-026079c77fc0",
     "name": "monorepo-management",
     "command": "npx skills add https://github.com/wshobson/agents --skill monorepo-management"
+  },
+  {
+    "id": "1d3cd73e-66d9-4803-af26-3f4c2b165084",
+    "name": "obsidian-cli",
+    "command": "npx skills add https://github.com/kepano/obsidian-skills --skill obsidian-cli"
   }
 ]
