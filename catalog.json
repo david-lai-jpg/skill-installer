@@ -208,5 +208,10 @@
     "id": "da4b3bfc-775c-4bac-af67-65f0a748ba20",
     "name": "react:components",
     "command": "npx skills add https://github.com/google-labs-code/stitch-skills --skill react:components"
+  },
+  {
+    "id": "ccd15538-5593-41fa-8711-e2b7ddf95ba6",
+    "name": "doc-coauthoring",
+    "command": "npx skills add https://github.com/anthropics/skills --skill doc-coauthoring"
   }
 ]
