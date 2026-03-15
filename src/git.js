@@ -19,23 +19,7 @@ export async function syncCatalog() {
   const remote = hasRemote();
 
   try {
-    // Pull latest if remote exists
-    if (remote) {
-      try {
-        git('pull', '--rebase');
-      } catch (e) {
-        const msg = e.stderr || e.message;
-        if (msg.includes('CONFLICT')) {
-          log.error('✗ Merge conflict detected during pull. Aborting mutation.');
-          log.warn('  Resolve the conflict manually in the tool repo and retry.');
-          git('rebase', '--abort');
-          return false;
-        }
-        log.warn(`⚠ Pull failed: ${msg.split('\n')[0]}. Proceeding with local commit.`);
-      }
-    }
-
-    // Stage and commit
+    // Stage and commit local changes first (before pull)
     git('add', 'catalog.json');
 
     try {
@@ -47,6 +31,22 @@ export async function syncCatalog() {
     }
 
     git('commit', '-m', 'update skill catalog');
+
+    // Pull --rebase replays our commit on top of remote
+    if (remote) {
+      try {
+        git('pull', '--rebase');
+      } catch (e) {
+        const msg = e.stderr || e.message;
+        if (msg.includes('CONFLICT')) {
+          log.error('✗ Merge conflict detected during rebase. Aborting.');
+          log.warn('  Resolve the conflict manually in the tool repo and retry.');
+          git('rebase', '--abort');
+          return false;
+        }
+        log.warn(`⚠ Pull failed: ${msg.split('\n')[0]}. Local commit preserved — push manually when ready.`);
+      }
+    }
 
     // Push if remote exists
     if (remote) {
