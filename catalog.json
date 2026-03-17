@@ -503,5 +503,16 @@
     "id": "9789dc93-bbb5-49c3-a52f-0cc4b2844a38",
     "name": "webapp-testing",
     "command": "npx skills add https://github.com/anthropics/skills --skill webapp-testing"
+  },
+  {
+    "id": "e8bfd439-7349-4c29-88fc-c2f3c7773e3c",
+    "name": "linkedin-profile-optimizer",
+    "command": "npx skills add https://github.com/paramchoudhary/resumeskills --skill 'LinkedIn Profile Optimizer'",
+    "category": "Career/Resume",
+    "tags": [
+      "career",
+      "resume"
+    ],
+    "description": "optimize linkedin profile"
   }
 ]
