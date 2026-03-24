@@ -514,5 +514,10 @@
       "resume"
     ],
     "description": "optimize linkedin profile"
+  },
+  {
+    "id": "8e47d795-9d8d-4b29-a7a9-c0d388231b15",
+    "name": "resume-tailored-generator",
+    "command": "npx skills add https://github.com/composiohq/awesome-claude-skills --skill tailored-resume-generator"
   }
 ]
