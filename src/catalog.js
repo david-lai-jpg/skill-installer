@@ -108,7 +108,7 @@ export async function update() {
 
   const skillId = await select({
     message: 'Select skill to update:',
-    choices: catalog.map((s) => ({ name: s.name, value: s.id })),
+    choices: [...catalog].sort((a, b) => a.name.localeCompare(b.name)).map((s) => ({ name: s.name, value: s.id })),
   });
 
   const skill = catalog.find((s) => s.id === skillId);
@@ -167,7 +167,7 @@ export async function del() {
 
   const ids = await checkbox({
     message: 'Select skill(s) to delete:',
-    choices: catalog.map((s) => ({ name: s.name, value: s.id })),
+    choices: [...catalog].sort((a, b) => a.name.localeCompare(b.name)).map((s) => ({ name: s.name, value: s.id })),
   });
 
   if (ids.length === 0) {
@@ -213,8 +213,10 @@ export function list(args) {
     return;
   }
 
+  const sorted = [...filtered].sort((a, b) => a.name.localeCompare(b.name));
+
   console.log('');
-  for (const s of filtered) {
+  for (const s of sorted) {
     const cat = s.category ? ` [${s.category}]` : '';
     const tags = s.tags?.length ? ` (${s.tags.join(', ')})` : '';
     console.log(`  ${s.name}${cat}${tags}`);

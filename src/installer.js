@@ -78,7 +78,7 @@ export async function install() {
     return a.localeCompare(b);
   })) {
     choices.push({ name: pc.bold(pc.dim(`── ${cat} ──`)), value: `__sep_${cat}`, disabled: '' });
-    for (const s of skills) {
+    for (const s of [...skills].sort((a, b) => a.name.localeCompare(b.name))) {
       const desc = s.description ? ` — ${s.description}` : '';
       choices.push({ name: `${s.name}${pc.dim(desc)}`, value: s.id });
     }
