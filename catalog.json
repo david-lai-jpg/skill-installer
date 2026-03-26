@@ -519,5 +519,16 @@
     "id": "8e47d795-9d8d-4b29-a7a9-c0d388231b15",
     "name": "resume-tailored-generator",
     "command": "npx skills add https://github.com/composiohq/awesome-claude-skills --skill tailored-resume-generator"
+  },
+  {
+    "id": "462c4499-a154-4a68-8871-4c31fcffd4c1",
+    "name": "shadcn/ui",
+    "command": "pnpm dlx skills add shadcn/ui",
+    "category": "React",
+    "tags": [
+      "react",
+      "ui"
+    ],
+    "description": "Official shadcn/ui skill"
   }
 ]
