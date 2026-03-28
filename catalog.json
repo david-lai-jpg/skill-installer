@@ -495,5 +495,16 @@
       "ui"
     ],
     "description": "Official shadcn/ui skill"
+  },
+  {
+    "id": "73cf20e1-173c-41c1-87a0-830c2aaf6aec",
+    "name": "frontend-responsive-design-standards",
+    "command": "npx skills add https://github.com/am-will/codex-skills --skill 'Frontend Responsive Design Standards'",
+    "category": "frontend",
+    "tags": [
+      "rwd",
+      "responsive",
+      "frontend"
+    ]
   }
 ]
