@@ -506,5 +506,16 @@
       "responsive",
       "frontend"
     ]
+  },
+  {
+    "id": "43903e0a-de4d-4e9a-9ba4-7d6759f072cd",
+    "name": "lighthouse-runner",
+    "command": "npx skills add https://github.com/jeremylongshore/claude-code-plugins-plus-skills --skill performance-lighthouse-runner",
+    "category": "performance",
+    "tags": [
+      "performance",
+      "frontend",
+      "lighthouse"
+    ]
   }
 ]
