@@ -270,11 +270,6 @@
     "command": "npx skills add https://github.com/pbakaus/impeccable --skill quieter"
   },
   {
-    "id": "2fcb34d0-6d70-4171-b603-6f1d2e91cc94",
-    "name": "code-review",
-    "command": "npx skills add https://github.com/supercent-io/skills-template --skill code-review"
-  },
-  {
     "id": "6164a49f-480a-4bce-a11e-c714189e29f5",
     "name": "shadcn-ui",
     "command": "npx skills add https://github.com/google-labs-code/stitch-skills --skill shadcn-ui"
@@ -285,39 +280,14 @@
     "command": "npx skills add https://github.com/github/awesome-copilot --skill gh-cli"
   },
   {
-    "id": "07676016-ea66-4173-a067-efc73d59dc47",
-    "name": "code-refactoring",
-    "command": "npx skills add https://github.com/supercent-io/skills-template --skill code-refactoring"
-  },
-  {
     "id": "31b05122-ccbe-49c6-aa74-46b2d89f9499",
     "name": "turborepo",
     "command": "npx skills add https://github.com/vercel/turborepo --skill turborepo"
   },
   {
-    "id": "42436fba-68d8-442d-b14d-f3c6d65840ad",
-    "name": "task-planning",
-    "command": "npx skills add https://github.com/supercent-io/skills-template --skill task-planning"
-  },
-  {
     "id": "55bff713-5315-4338-8d01-b37e22a25150",
     "name": "responsive-design",
-    "command": "npx skills add https://github.com/supercent-io/skills-template --skill responsive-design"
-  },
-  {
-    "id": "93b55537-be33-4f3f-9b27-cd89874d7e58",
-    "name": "copilot-coding-agent",
-    "command": "npx skills add https://github.com/supercent-io/skills-template --skill copilot-coding-agent"
-  },
-  {
-    "id": "82fa81eb-6c1b-467b-b227-47245e2ff1b5",
-    "name": "codebase-search",
-    "command": "npx skills add https://github.com/supercent-io/skills-template --skill codebase-search"
-  },
-  {
-    "id": "a1e3e059-31a8-431a-9407-33c6a280f7cc",
-    "name": "debugging",
-    "command": "npx skills add https://github.com/supercent-io/skills-template --skill debugging"
+    "command": "npx skills add https://github.com/wshobson/agents --skill responsive-design"
   },
   {
     "id": "48bd7eba-a8ce-49b4-b4bb-f606528efe7f",
@@ -333,11 +303,6 @@
     "id": "4a4745a8-acbd-4e08-bb09-76dd1fae80f8",
     "name": "architecture-patterns",
     "command": "npx skills add https://github.com/wshobson/agents --skill architecture-patterns"
-  },
-  {
-    "id": "82a68b63-44c2-445f-b7d0-968d3633e042",
-    "name": "frontend-design-system",
-    "command": "npx skills add https://github.com/supercent-io/skills-template --skill frontend-design-system"
   },
   {
     "id": "f5668f00-c795-47f2-b0a3-630f11bd1ac7",
