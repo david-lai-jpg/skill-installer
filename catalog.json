@@ -531,5 +531,10 @@
     "id": "a5184c96-9110-4c90-9f0a-985dd4f5127f",
     "name": "zarazhangrui/frontend-slides",
     "command": "git clone https://github.com/zarazhangrui/frontend-slides.git ~/.claude/skills/frontend-slides"
+  },
+  {
+    "id": "e4cc9d93-8688-4a62-8e0c-bf674e810ca6",
+    "name": "zarazhangrui/follow-builders",
+    "command": "git clone https://github.com/zarazhangrui/follow-builders.git ~/.claude/skills/follow-builders && cd ~/.claude/skills/follow-builders/scripts && npm install"
   }
 ]
