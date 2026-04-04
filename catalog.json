@@ -536,5 +536,10 @@
     "id": "e4cc9d93-8688-4a62-8e0c-bf674e810ca6",
     "name": "zarazhangrui/follow-builders",
     "command": "git clone https://github.com/zarazhangrui/follow-builders.git ~/.claude/skills/follow-builders && cd ~/.claude/skills/follow-builders/scripts && npm install"
+  },
+  {
+    "id": "f5f8f0bc-9389-460d-86ea-7c0c35b3a27b",
+    "name": "zarazhangrui/codebase-to-course",
+    "command": "git clone https://github.com/zarazhangrui/codebase-to-course.git ~/.claude/skills/codebase-to-course"
   }
 ]
