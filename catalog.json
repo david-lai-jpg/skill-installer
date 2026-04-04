@@ -526,5 +526,10 @@
     "tags": [
       "translation"
     ]
+  },
+  {
+    "id": "a5184c96-9110-4c90-9f0a-985dd4f5127f",
+    "name": "zarazhangrui/frontend-slides",
+    "command": "git clone https://github.com/zarazhangrui/frontend-slides.git ~/.claude/skills/frontend-slides"
   }
 ]
