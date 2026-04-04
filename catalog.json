@@ -517,5 +517,14 @@
       "frontend",
       "lighthouse"
     ]
+  },
+  {
+    "id": "d2e5e455-1e80-497f-b87d-1cf09c6f72ce",
+    "name": "baoyu-translate",
+    "command": "npx skills add https://github.com/jimliu/baoyu-skills --skill baoyu-translate",
+    "category": "translation",
+    "tags": [
+      "translation"
+    ]
   }
 ]
