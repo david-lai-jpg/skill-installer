@@ -1,5 +1,5 @@
 import { spawn } from 'node:child_process';
-import { confirm, select, checkbox } from '@inquirer/prompts';
+import { confirm, select, search } from '@inquirer/prompts';
 import pc from 'picocolors';
 import { loadCatalog } from './catalog.js';
 import { log } from './utils.js';
@@ -62,34 +62,50 @@ export async function install() {
     }
   }
 
-  // Group by category for display
-  const grouped = {};
-  for (const s of pool) {
-    const cat = s.category || 'Other';
-    if (!grouped[cat]) grouped[cat] = [];
-    grouped[cat].push(s);
-  }
+  // Search-and-select loop
+  const selected = [];
+  const selectedIds = new Set();
 
-  // Build checkbox choices with category separators
-  const choices = [];
-  for (const [cat, skills] of Object.entries(grouped).sort(([a], [b]) => {
-    if (a === 'Other') return 1;
-    if (b === 'Other') return -1;
-    return a.localeCompare(b);
-  })) {
-    choices.push({ name: pc.bold(pc.dim(`── ${cat} ──`)), value: `__sep_${cat}`, disabled: '' });
-    for (const s of [...skills].sort((a, b) => a.name.localeCompare(b.name))) {
-      const desc = s.description ? ` — ${s.description}` : '';
-      choices.push({ name: `${s.name}${pc.dim(desc)}`, value: s.id });
+  while (true) {
+    const remaining = pool.filter((s) => !selectedIds.has(s.id));
+    if (remaining.length === 0) {
+      log.dim('All skills selected.');
+      break;
     }
+
+    if (selected.length > 0) {
+      console.log(pc.dim(`Selected so far: ${selected.map((s) => s.name).join(', ')}`));
+    }
+
+    const skillId = await search({
+      message: `Search skills (${remaining.length} available):`,
+      source: (term) => {
+        const q = (term || '').toLowerCase();
+        return remaining
+          .filter((s) => {
+            if (!q) return true;
+            const haystack = [s.name, s.category, s.description, ...(s.tags || [])].join(' ').toLowerCase();
+            return haystack.includes(q);
+          })
+          .sort((a, b) => a.name.localeCompare(b.name))
+          .map((s) => {
+            const cat = s.category ? pc.dim(`[${s.category}]`) : '';
+            const desc = s.description ? pc.dim(` — ${s.description}`) : '';
+            return { name: `${s.name} ${cat}${desc}`, value: s.id };
+          });
+      },
+    });
+
+    const skill = pool.find((s) => s.id === skillId);
+    selected.push(skill);
+    selectedIds.add(skill.id);
+    log.success(`+ ${skill.name}`);
+
+    if (remaining.length <= 1) break;
+    const more = await confirm({ message: 'Add another skill?', default: true });
+    if (!more) break;
   }
 
-  const selectedIds = await checkbox({
-    message: 'Select skills to install:',
-    choices,
-  });
-
-  const selected = pool.filter((s) => selectedIds.includes(s.id));
   if (selected.length === 0) {
     log.dim('Nothing selected.');
     return;
