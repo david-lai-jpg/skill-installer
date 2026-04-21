@@ -541,5 +541,16 @@
     "id": "f5f8f0bc-9389-460d-86ea-7c0c35b3a27b",
     "name": "zarazhangrui/codebase-to-course",
     "command": "git clone https://github.com/zarazhangrui/codebase-to-course.git ~/.claude/skills/codebase-to-course"
+  },
+  {
+    "id": "fdfb61a1-f9c2-4979-a753-57eeec91c722",
+    "name": "make-interfaces-feel-better",
+    "command": "npx skills add https://github.com/jakubkrehel/make-interfaces-feel-better --skill make-interfaces-feel-better",
+    "category": "uiux",
+    "tags": [
+      "uiux",
+      "ui",
+      "frontend"
+    ]
   }
 ]
