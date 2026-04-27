@@ -563,5 +563,10 @@
       "ui",
       "frontend"
     ]
+  },
+  {
+    "id": "5ee9964a-e924-492a-a7dd-1583dd012cfe",
+    "name": "session-handoff",
+    "command": "npx skills add https://github.com/softaworks/agent-toolkit --skill session-handoff"
   }
 ]
