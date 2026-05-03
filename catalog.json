@@ -568,5 +568,10 @@
     "id": "5ee9964a-e924-492a-a7dd-1583dd012cfe",
     "name": "session-handoff",
     "command": "npx skills add https://github.com/softaworks/agent-toolkit --skill session-handoff"
+  },
+  {
+    "id": "943da24e-1805-4eff-a77b-a92519a8a3a1",
+    "name": "matt-pocock-skills",
+    "command": "npx skills@latest add mattpocock/skills"
   }
 ]
