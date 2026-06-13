@@ -578,5 +578,10 @@
     "id": "94a44b1c-8fae-466d-a078-849e0e2568d8",
     "name": "shadcn/improve",
     "command": "npx skills add shadcn/improve"
+  },
+  {
+    "id": "aeae33e7-7366-42c0-8f32-c74a0a4d2878",
+    "name": "chrome-devtools-axi",
+    "command": "npx skills add kunchenguid/chrome-devtools-axi --skill chrome-devtools-axi -g"
   }
 ]
