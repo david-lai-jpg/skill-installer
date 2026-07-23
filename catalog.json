@@ -578,5 +578,10 @@
     "id": "94a44b1c-8fae-466d-a078-849e0e2568d8",
     "name": "shadcn/improve",
     "command": "npx skills add shadcn/improve"
+  },
+  {
+    "id": "bd81e5f6-c0f4-469a-a7e7-3739964e102d",
+    "name": "hallmark",
+    "command": "npx skills add nutlope/hallmark"
   }
 ]
