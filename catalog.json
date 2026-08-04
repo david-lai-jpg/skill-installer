@@ -556,7 +556,7 @@
   {
     "id": "a606c0bf-f7f2-406f-aee7-ce677ca7fab9",
     "name": "taste-skill",
-    "command": "npx skills add https://github.com/Leonxlnx/taste-skill",
+    "command": "npx skills add Leonxlnx/taste-skill",
     "category": "uiux",
     "tags": [
       "uiux",
