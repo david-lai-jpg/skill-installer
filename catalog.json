@@ -583,5 +583,10 @@
     "id": "bd81e5f6-c0f4-469a-a7e7-3739964e102d",
     "name": "hallmark",
     "command": "npx skills add nutlope/hallmark"
+  },
+  {
+    "id": "ae643941-dc0c-4a74-8ebd-2c8eac2e1db7",
+    "name": "bro",
+    "command": "npx skills add backnotprop/bro"
   }
 ]
