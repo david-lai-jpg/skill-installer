@@ -593,5 +593,10 @@
     "id": "1f75c98a-35b7-4c66-b3ce-270ca44ac66b",
     "name": "archify",
     "command": "npx skills add tt-a1i/archify -g"
+  },
+  {
+    "id": "9faca21e-83d4-4375-b043-93fd2181bb9e",
+    "name": "kun",
+    "command": "npx skills add kunchenguid/kun -g"
   }
 ]
