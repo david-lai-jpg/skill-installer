@@ -305,11 +305,6 @@
     "command": "npx skills add https://github.com/wshobson/agents --skill architecture-patterns"
   },
   {
-    "id": "f5668f00-c795-47f2-b0a3-630f11bd1ac7",
-    "name": "humanizer-zh",
-    "command": "npx skills add https://github.com/op7418/humanizer-zh --skill humanizer-zh"
-  },
-  {
     "id": "7a0918b9-47c7-4d06-a3d4-025a871dfad9",
     "name": "prompt-engineering-patterns",
     "command": "npx skills add https://github.com/wshobson/agents --skill prompt-engineering-patterns"
@@ -433,11 +428,6 @@
     "id": "fe52eebd-74c6-4ab2-861c-e7f7433552d1",
     "name": "seo",
     "command": "npx skills add https://github.com/addyosmani/web-quality-skills --skill seo"
-  },
-  {
-    "id": "83fe1375-9450-483a-9a22-0238c569dc76",
-    "name": "humanizer",
-    "command": "npx skills add https://github.com/softaworks/agent-toolkit --skill humanizer"
   },
   {
     "id": "8796fe05-0d18-4c7a-8226-ab5b7eadf6da",
