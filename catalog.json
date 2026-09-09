@@ -588,5 +588,10 @@
     "id": "9faca21e-83d4-4375-b043-93fd2181bb9e",
     "name": "kun",
     "command": "npx skills add kunchenguid/kun -g"
+  },
+  {
+    "id": "ad7b02e7-25ff-4518-9c52-2af2abbc19b9",
+    "name": "humanizer",
+    "command": "npx skills add blader/humanizer --global"
   }
 ]
