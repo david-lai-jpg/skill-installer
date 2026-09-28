@@ -6,17 +6,62 @@ import { CATALOG_PATH, log } from './utils.js';
 import { hasRemote, syncCatalog } from './git.js';
 
 export function loadCatalog() {
+  let data;
   try {
-    const data = fs.readFileSync(CATALOG_PATH, 'utf8');
-    return JSON.parse(data);
-  } catch {
-    return [];
+    data = fs.readFileSync(CATALOG_PATH, 'utf8');
+  } catch (error) {
+    if (error.code === 'ENOENT') {
+      throw new Error(`Catalog not found at ${CATALOG_PATH}. Run "skill-installer init" to create it.`);
+    }
+    throw new Error(`Cannot read catalog at ${CATALOG_PATH}: ${error.message}`);
   }
+
+  let catalog;
+  try {
+    catalog = JSON.parse(data);
+  } catch {
+    throw new Error(`Invalid JSON in catalog at ${CATALOG_PATH}. Repair the file or replace it with a JSON array.`);
+  }
+
+  validateCatalog(catalog, `Catalog at ${CATALOG_PATH}`);
+  return catalog;
 }
 
 export function saveCatalog(catalog) {
+  validateCatalog(catalog, 'Catalog');
   fs.writeFileSync(CATALOG_PATH, JSON.stringify(catalog, null, 2) + '\n');
 }
+
+function validateCatalog(catalog, label) {
+  if (!Array.isArray(catalog)) throw new Error(`${label} must contain a JSON array.`);
+
+  const ids = new Map();
+  catalog.forEach((entry, index) => {
+    const at = `${label} entry ${index + 1}`;
+    if (!entry || typeof entry !== 'object' || Array.isArray(entry)) throw new Error(`${at} must be an object.`);
+    for (const field of ['id', 'name', 'command']) {
+      if (typeof entry[field] !== 'string' || !entry[field].trim()) throw new Error(`${at} must have a non-empty string ${field}.`);
+    }
+    for (const field of ['category', 'description']) {
+      if (entry[field] !== undefined && typeof entry[field] !== 'string') throw new Error(`${at}.${field} must be a string.`);
+    }
+    if (entry.tags !== undefined && (!Array.isArray(entry.tags) || entry.tags.some((tag) => typeof tag !== 'string'))) {
+      throw new Error(`${at}.tags must be an array of strings.`);
+    }
+    if (ids.has(entry.id)) {
+      throw new Error(`${label} entries ${ids.get(entry.id) + 1} and ${index + 1} have duplicate ids.`);
+    }
+    ids.set(entry.id, index);
+  });
+}
+
+const required = (label) => (value) => value.trim() ? true : `${label} is required.`;
+const uniqueName = (catalog, currentId) => (value) => {
+  const requiredResult = required('Name')(value);
+  if (requiredResult !== true) return requiredResult;
+  return !catalog.some((skill) => skill.name === value.trim() && skill.id !== currentId) ||
+    `Skill "${value.trim()}" already exists.`;
+};
 
 // ── Init ──────────────────────────────────────────
 
@@ -51,22 +96,12 @@ export async function init() {
 export async function add() {
   const catalog = loadCatalog();
 
-  const name = await input({ message: 'Skill name (required):' });
-  if (!name.trim()) {
-    log.error('✗ Name is required.');
-    return;
-  }
+  const name = await input({
+    message: 'Skill name (required):',
+    validate: uniqueName(catalog),
+  });
 
-  if (catalog.some((s) => s.name === name.trim())) {
-    log.error(`✗ Skill "${name.trim()}" already exists.`);
-    return;
-  }
-
-  const command = await input({ message: 'Install command (required):' });
-  if (!command.trim()) {
-    log.error('✗ Command is required.');
-    return;
-  }
+  const command = await input({ message: 'Install command (required):', validate: required('Command') });
 
   // Warn on duplicate command
   const dup = catalog.find((s) => s.command === command.trim());
@@ -122,46 +157,43 @@ export async function update() {
   });
 
   const skill = catalog.find((s) => s.id === skillId);
+  const draft = structuredClone(skill);
 
-  const field = await select({
-    message: 'Which field to edit?',
-    choices: [
-      { name: `name (${skill.name})`, value: 'name' },
-      { name: `command (${skill.command})`, value: 'command' },
-      { name: `category (${skill.category || '—'})`, value: 'category' },
-      { name: `tags (${(skill.tags || []).join(', ') || '—'})`, value: 'tags' },
-      { name: `description (${skill.description || '—'})`, value: 'description' },
-    ],
-  });
-
-  if (field === 'tags') {
-    const val = await input({
-      message: 'New tags (comma-separated):',
-      default: (skill.tags || []).join(', '),
+  while (true) {
+    const field = await select({
+      message: 'Which field to edit?',
+      choices: [
+        { name: `name (${draft.name})`, value: 'name' },
+        { name: `command (${draft.command})`, value: 'command' },
+        { name: `category (${draft.category || '—'})`, value: 'category' },
+        { name: `tags (${(draft.tags || []).join(', ') || '—'})`, value: 'tags' },
+        { name: `description (${draft.description || '—'})`, value: 'description' },
+        { name: 'Save', value: 'save' },
+        { name: 'Cancel', value: 'cancel' },
+      ],
     });
-    skill.tags = val.split(',').map((t) => t.trim()).filter(Boolean);
-  } else {
+
+    if (field === 'cancel') return;
+    if (field === 'save') break;
+    if (field === 'tags') {
+      const val = await input({ message: 'New tags (comma-separated):', default: (draft.tags || []).join(', ') });
+      draft.tags = val.split(',').map((tag) => tag.trim()).filter(Boolean);
+      continue;
+    }
+
     const val = await input({
       message: `New ${field}:`,
-      default: skill[field] || '',
+      default: draft[field] || '',
+      validate: field === 'name' ? uniqueName(catalog, skill.id)
+        : field === 'command' ? required('Command') : undefined,
     });
-    if (field === 'name' && !val.trim()) {
-      log.error('✗ Name cannot be empty.');
-      return;
-    }
-    if (field === 'command' && !val.trim()) {
-      log.error('✗ Command cannot be empty.');
-      return;
-    }
-    if (field === 'name' && catalog.some((s) => s.name === val.trim() && s.id !== skill.id)) {
-      log.error(`✗ Skill "${val.trim()}" already exists.`);
-      return;
-    }
-    skill[field] = val.trim() || undefined;
+    if (val.trim()) draft[field] = val.trim();
+    else delete draft[field];
   }
 
+  catalog[catalog.indexOf(skill)] = draft;
   saveCatalog(catalog);
-  log.success(`✓ Updated "${skill.name}"`);
+  log.success(`✓ Updated "${draft.name}"`);
 
   await syncCatalog();
 }
@@ -253,8 +285,16 @@ export async function importCatalog(filePath) {
     return;
   }
 
-  if (!Array.isArray(incoming)) {
-    log.error('✗ Import file must contain a JSON array.');
+  try {
+    if (!Array.isArray(incoming)) throw new Error('Import file must contain a JSON array.');
+    incoming = incoming.map((entry) =>
+      entry && typeof entry === 'object' && !Array.isArray(entry)
+        ? { ...entry, id: entry.id || crypto.randomUUID() }
+        : entry
+    );
+    validateCatalog(incoming, `Import file ${filePath}`);
+  } catch (error) {
+    log.error(`✗ ${error.message}`);
     return;
   }
 
@@ -262,11 +302,6 @@ export async function importCatalog(filePath) {
   let added = 0;
 
   for (const entry of incoming) {
-    if (!entry.name || !entry.command) {
-      log.warn(`⚠ Skipping entry without name/command`);
-      continue;
-    }
-
     const existing = catalog.find((s) => s.name === entry.name);
     if (existing) {
       const action = await select({
@@ -283,13 +318,15 @@ export async function importCatalog(filePath) {
         Object.assign(existing, entry, { id: existing.id });
         added++;
       } else {
-        const newName = await input({ message: 'New name:' });
-        if (!newName.trim()) continue;
+        const newName = await input({
+          message: 'New name:',
+          validate: uniqueName(catalog),
+        });
         catalog.push({ ...entry, id: crypto.randomUUID(), name: newName.trim() });
         added++;
       }
     } else {
-      catalog.push({ ...entry, id: entry.id || crypto.randomUUID() });
+      catalog.push(entry);
       added++;
     }
   }

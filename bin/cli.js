@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import { select } from '@inquirer/prompts';
 import mri from 'mri';
 import { HELP_TEXT, log } from '../src/utils.js';
 import { init, add, update, del, list, importCatalog, exportCatalog } from '../src/catalog.js';
@@ -10,15 +11,24 @@ const args = mri(process.argv.slice(2), {
   boolean: ['help'],
 });
 
-const command = args._[0];
+let command = args._[0];
 
-if (args.help || !command) {
+if (args.help || (!command && (!process.stdin.isTTY || !process.stdout.isTTY))) {
   console.log(HELP_TEXT);
   process.exit(0);
 }
 
 try {
+  if (!command) {
+    command = await select({
+      message: 'What would you like to do?',
+      choices: ['Install', 'Add', 'Update', 'Delete', 'List', 'Exit']
+        .map((name) => ({ name, value: name.toLowerCase() })),
+    });
+  }
   switch (command) {
+    case 'exit':
+      break;
     case 'init':
       await init();
       break;

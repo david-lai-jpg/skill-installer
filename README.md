@@ -32,6 +32,8 @@ skill-installer install
 
 ## Commands
 
+Run `skill-installer` without arguments for an action menu. `--help` prints usage; non-interactive launches without arguments also print usage.
+
 ### `skill-installer init`
 
 First-time setup. Creates `catalog.json` if missing, verifies git remote for syncing, checks Node.js version.
@@ -48,15 +50,22 @@ Interactive prompts to add a new skill:
 | tags        | no       | Comma-separated, used for filtering         |
 | description | no       | What the skill does                         |
 
-If the command matches an existing entry, you'll get a duplicate warning.
+Required fields and duplicate names show an error in place so you can correct the value. If the command matches an existing entry, you'll get a duplicate warning.
 
 ### `skill-installer update`
 
-Select a skill from the catalog, then choose which field to edit.
+Select a skill, edit as many fields as needed, then choose **Save**. **Cancel** or Ctrl+C discards the draft. Changes are saved and synced once.
 
 ### `skill-installer delete`
 
-Optionally filter by name, category, tag, or description (Enter shows all), then select skills in one checkbox list: use ↑/↓ to move, Space to toggle, A to select or clear all, and Enter to review. Submit an empty selection or press Ctrl+C to cancel. Review the selected names before confirming removal (defaults to No). This removes catalog entries, not installed skill files.
+Search and select in one list. Checked skills stay selected when the search changes.
+
+- Type to filter by name, category, tag, or description; Backspace edits the search.
+- Use ↑/↓ to move and Space to toggle a skill.
+- Ctrl+A selects or clears all current matches, leaving hidden selections intact. Ctrl+U clears the search.
+- Enter reviews the complete selection. Esc or Ctrl+C cancels.
+
+No matches? Keep typing or clear the search without restarting. Review all selected names before confirming removal (defaults to No). This removes catalog entries, not installed skill files. An empty selection makes no changes.
 
 ### `skill-installer list`
 
@@ -72,11 +81,10 @@ skill-installer list --tag performance  # by tag
 
 The main event. Interactive flow:
 
-1. **Optional filter** — narrow by category or tag
-2. **Checkbox selection** — optionally narrow by search text, then pick multiple skills from an alphabetical list with categories; use Space to toggle, A to select or clear all, and Enter to review
-3. **Confirm** — review commands before running
-4. **Execute** — runs each command sequentially with `stdio: inherit` (supports interactive installers)
-5. **Summary** — final report of what succeeded/failed
+1. **Search and select** — use the same searchable selection list as delete
+2. **Confirm** — review commands before running
+3. **Execute** — runs each command sequentially with `stdio: inherit` (supports interactive installers)
+4. **Summary** — final report of what succeeded/failed
 
 On failure, you choose to continue or abort. Skipped skills are tracked in the summary.
 
@@ -98,7 +106,9 @@ skill-installer export ~/my-skills.json
 
 ## Catalog Format
 
-The catalog is a JSON array stored in `catalog.json` at the repo root:
+The catalog is a JSON array stored in `catalog.json` at the repo root. Missing, unreadable, malformed, or structurally invalid catalogs produce an error instead of being treated as empty. Repair the file before editing; for a new catalog, run `skill-installer init`. Imports are validated before saving.
+
+Example:
 
 ```json
 [
@@ -152,4 +162,4 @@ MIT
 
 ## Verification
 
-Run `python3 tests/cli-selection.py` to check batch selection, cancellation, deletion, and installation in disposable catalogs through a real terminal. Requires Python 3 and Git.
+Run `python3 tests/cli-selection.py` to check search and selection, validation recovery, Save/Cancel, the launch menu, and catalog protection in disposable catalogs through a real terminal. Requires Python 3 and Git.

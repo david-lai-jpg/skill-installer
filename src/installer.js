@@ -1,5 +1,5 @@
 import { spawn } from 'node:child_process';
-import { confirm, select } from '@inquirer/prompts';
+import { confirm } from '@inquirer/prompts';
 import pc from 'picocolors';
 import { selectSkills } from './selection.js';
 import { loadCatalog } from './catalog.js';
@@ -23,48 +23,8 @@ export async function install() {
     return;
   }
 
-  // Optional pre-filter
-  const wantFilter = await confirm({ message: 'Filter by category or tag?', default: false });
-  let pool = catalog;
-
-  if (wantFilter) {
-    const filterBy = await select({
-      message: 'Filter by:',
-      choices: [
-        { name: 'Category', value: 'category' },
-        { name: 'Tag', value: 'tag' },
-      ],
-    });
-
-    if (filterBy === 'category') {
-      const categories = [...new Set(catalog.map((s) => s.category || 'Other'))];
-      const chosen = await select({
-        message: 'Select category:',
-        choices: categories.map((c) => ({ name: c, value: c })),
-      });
-      pool = catalog.filter((s) => (s.category || 'Other') === chosen);
-    } else {
-      const allTags = [...new Set(catalog.flatMap((s) => s.tags || []))];
-      if (allTags.length === 0) {
-        log.dim('No tags found.');
-        pool = catalog;
-      } else {
-        const chosen = await select({
-          message: 'Select tag:',
-          choices: allTags.map((t) => ({ name: t, value: t })),
-        });
-        pool = catalog.filter((s) => s.tags?.includes(chosen));
-      }
-    }
-
-    if (pool.length === 0) {
-      log.dim('No skills match that filter.');
-      return;
-    }
-  }
-
-  const ids = await selectSkills(pool, 'Select skills to install:');
-  const selected = ids.map((id) => pool.find((skill) => skill.id === id));
+  const ids = await selectSkills(catalog, 'Select skills to install:');
+  const selected = ids.map((id) => catalog.find((skill) => skill.id === id));
 
   if (selected.length === 0) {
     log.dim('Nothing selected.');

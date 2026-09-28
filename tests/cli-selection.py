@@ -6,9 +6,14 @@ from pathlib import Path
 import pty
 import select
 import shutil
+import signal
 import subprocess
 import tempfile
 import time
+
+artifact_fd, artifact_path = tempfile.mkstemp(prefix='skill-installer-ux-', suffix='.log')
+os.close(artifact_fd)
+ARTIFACT = Path(artifact_path)
 
 ROOT = Path(__file__).resolve().parents[1]
 ENV = {k: v for k, v in os.environ.items() if not k.startswith('GIT_')}
@@ -17,7 +22,7 @@ SKILLS = [dict(id=name, name=name, command=f'echo {name} >> installed.txt')
           for name in ['Charlie', 'Alpha', 'Bravo']]
 
 
-def scenario(command, actions, remaining, installed=None, empty=False, query=""):
+def scenario(command, actions, remaining, installed=None, empty=False, fields=None, raw=None, exit_code=0):
     with tempfile.TemporaryDirectory(prefix='skill-selection-') as directory:
         root = Path(directory)
         for folder in ['src', 'bin']:
@@ -25,7 +30,8 @@ def scenario(command, actions, remaining, installed=None, empty=False, query="")
         shutil.copy(ROOT / 'package.json', root)
         (root / 'node_modules').symlink_to(ROOT / 'node_modules', target_is_directory=True)
         catalog = [] if empty else SKILLS
-        (root / 'catalog.json').write_text(json.dumps(catalog))
+        before = raw if raw is not None else json.dumps(catalog)
+        (root / 'catalog.json').write_text(before)
         for args in [('init', '-q'), ('config', 'user.name', 'CLI test'),
                      ('config', 'user.email', 'cli@example.invalid'),
                      ('config', 'core.hooksPath', '/dev/null'), ('add', 'catalog.json'),
@@ -33,7 +39,7 @@ def scenario(command, actions, remaining, installed=None, empty=False, query="")
             subprocess.run(['git', '-C', directory, *args], env=ENV, check=True,
                            stdout=subprocess.DEVNULL, stderr=subprocess.PIPE)
         master, slave = pty.openpty()
-        process = subprocess.Popen(['node', 'bin/cli.js', command], cwd=root, env=ENV,
+        process = subprocess.Popen(['node', 'bin/cli.js', *([command] if command else [])], cwd=root, env=ENV,
                                    stdin=slave, stdout=slave, stderr=slave, start_new_session=True)
         os.close(slave)
         output = ''
@@ -58,11 +64,11 @@ def scenario(command, actions, remaining, installed=None, empty=False, query="")
             cursor = output.index(expected, cursor) + len(expected)
 
         try:
-            if not empty:
-                at = 1 if command == 'install' else 0
-                actions.insert(at, ('Filter skills', query + '\r'))
             for expected, keys in actions:
                 read_until(expected)
+                if isinstance(keys, int):
+                    process.send_signal(keys)
+                    continue
                 if keys:
                     time.sleep(0.15)
                     # Separate keypresses so the real prompt receives each event.
@@ -77,12 +83,27 @@ def scenario(command, actions, remaining, installed=None, empty=False, query="")
                     except OSError as error:
                         if error.errno != errno.EIO:
                             raise
-            assert process.poll() == 0, output
-            assert [s['name'] for s in json.loads((root / 'catalog.json').read_text())] == remaining
+            assert process.poll() == exit_code, output
+            if '\x1b[?1049h' in output:
+                assert '\x1b[?1049l' in output, 'Terminal not restored'
+                assert '\x1b[?25h' in output, 'Cursor not restored'
+            saved = (root / 'catalog.json').read_text()
+            if raw is not None:
+                assert saved == before
+                assert 'SENSITIVE_MARKER' not in output
+            else:
+                entries = json.loads(saved)
+                assert [s['name'] for s in entries] == remaining
+                if fields:
+                    for name, expected in fields.items():
+                        entry = next(s for s in entries if s['name'] == name)
+                        assert all(entry.get(k) == v for k, v in expected.items()), entry
             actual = (root / 'installed.txt').read_text().splitlines() if (root / 'installed.txt').exists() else []
             assert actual == (installed or []), actual
             assert 'Delete another?' not in output and 'Add another skill?' not in output
         finally:
+            with ARTIFACT.open('a') as artifact:
+                artifact.write(f'\n=== {command or "menu"} ===\n{output}\n')
             if process.poll() is None:
                 process.kill()
                 process.wait()
@@ -91,14 +112,45 @@ def scenario(command, actions, remaining, installed=None, empty=False, query="")
 
 original = [s['name'] for s in SKILLS]
 scenario('delete', [('Select skills to remove', '\r'), ('Nothing selected.', '')], original)
-scenario('delete', [('Select skills to remove', ' 2\r'), ('Remove 2 skill(s)', '\r')], original)
-scenario('delete', [('Select skills to remove', ' 2\r'), ('Remove 2 skill(s)', 'y\r'), ('Deleted 2 skill(s)', '')], ['Charlie'])
-scenario('delete', [('Select skills to remove', 'a\r'), ('Remove 3 skill(s)', 'y\r'), ('Deleted 3 skill(s)', '')], [])
-scenario('delete', [('Select skills to remove', 'aa\r'), ('Nothing selected.', '')], original)
+scenario('delete', [('Select skills to remove', 'Alpha '), ('1 selected', '\x15Bravo \r'), ('Remove 2 skill(s)', '\r')], original)
+scenario('delete', [('Select skills to remove', 'Alpha '), ('1 selected', '\x15Bravo \r'), ('Remove 2 skill(s)', 'y\r'), ('Deleted 2 skill(s)', '')], ['Charlie'])
+scenario('delete', [('Select skills to remove', '\x01\r'), ('Remove 3 skill(s)', 'y\r'), ('Deleted 3 skill(s)', '')], [])
+scenario('delete', [('Select skills to remove', '\x01\x01\r'), ('Nothing selected.', '')], original)
 scenario('delete', [('Select skills to remove', '\x03'), ('Cancelled.', '')], original)
 scenario('delete', [('No skills in catalog.', '')], [], empty=True)
-scenario('install', [('Filter by category or tag?', '\r'), ('Select skills to install', ' 2\r'),
+scenario('install', [('Select skills to install', 'Alpha '), ('1 selected', '\x15Bravo \r'),
                      ('Install these 2 skill(s)?', 'y\r'), ('Results', '')], original, ['Alpha', 'Bravo'])
-scenario('delete', [('Select skills to remove', 'a\r'), ('Remove 1 skill(s)', 'y\r'), ('Deleted 1 skill(s)', '')], ['Charlie', 'Alpha'], query='bRaVo')
-scenario('delete', [('No skills match', ''), ('Nothing selected.', '')], original, query='missing')
-print('PASS: 10 terminal scenarios; disposable catalogs only.')
+scenario('delete', [('Select skills to remove', 'bRaVo\x01\r'), ('Remove 1 skill(s)', 'y\r'), ('Deleted 1 skill(s)', '')], ['Charlie', 'Alpha'])
+scenario('delete', [('Select skills to remove', 'missing'), ('No matches', '\x15Alpha \r'), ('Remove 1 skill(s)', 'y\r'), ('Deleted 1 skill(s)', '')], ['Charlie', 'Bravo'])
+scenario('', [('What would you like to do?', '\x03'), ('Cancelled.', '')], original)
+scenario('--help', [('Usage:', '')], original)
+DOWN = '\x1b[B'
+UP = '\x1b[A'
+scenario('', [('What would you like to do?', '\r'), ('Select skills to install', 'Alpha \r'), ('Install these 1 skill(s)?', 'n\r')], original)
+scenario('', [('What would you like to do?', DOWN * 4 + '\r'), ('3 skill(s)', '')], original)
+scenario('add', [('Skill name', '\r'), ('Name is required.', 'Alpha\r'), ('already exists.', '\x15Delta\r'),
+                 ('Install command', '\r'), ('Command is required.', 'echo Delta\r'),
+                 ('Category', '\r'), ('Tags', '\r'), ('Description', '\r'), ('Added "Delta"', '')], original + ['Delta'])
+scenario('update', [('Search skill to update', 'Alpha\r'), ('Which field', '\r'),
+                    ('New name', 'Delta\r'), ('Which field', DOWN * 2 + '\r'),
+                    ('New category', 'Testing\r'), ('Which field', DOWN * 5 + '\r'), ('Updated "Delta"', '')],
+         ['Charlie', 'Delta', 'Bravo'], fields={'Delta': {'category': 'Testing'}})
+scenario('update', [('Search skill to update', 'Alpha\r'), ('Which field', '\r'),
+                    ('New name', 'Delta\r'), ('Which field', UP + '\r')], original)
+scenario('update', [('Search skill to update', 'Alpha\r'), ('Which field', '\r'),
+                    ('New name', 'Delta\r'), ('Which field', '\x03'), ('Cancelled.', '')], original)
+scenario('update', [('Search skill to update', 'Alpha\r'), ('Which field', '\r'),
+                    ('New name', 'Bravo\r'), ('already exists.', '\x15Delta\r'),
+                    ('Which field', DOWN * 5 + '\r'), ('Updated "Delta"', '')], ['Charlie', 'Delta', 'Bravo'])
+scenario('add', [('Invalid JSON in catalog at', '')], original, raw='{"SENSITIVE_MARKER":', exit_code=1)
+scenario('add', [('must contain a JSON array', '')], original, raw='{}', exit_code=1)
+scenario('add', [('duplicate', '')], original, raw=json.dumps([SKILLS[0], SKILLS[0]]), exit_code=1)
+scenario('delete', [('Select skills to remove', signal.SIGTERM)], original, exit_code=143)
+master, slave = pty.openpty()
+try:
+    result = subprocess.run(['node', str(ROOT / 'bin/cli.js')], stdin=slave, capture_output=True, timeout=5)
+    assert result.returncode == 0 and b'Usage:' in result.stdout and b'What would' not in result.stdout
+finally:
+    os.close(master)
+    os.close(slave)
+print(f'PASS: 24 terminal scenarios; disposable catalogs only. Transcript: {ARTIFACT}')
