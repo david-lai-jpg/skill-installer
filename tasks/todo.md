@@ -1,12 +1,13 @@
 # TODO
 
 ## In Progress
-- Deliver UX changes on master. <!-- tracker: {"id":"master-delivery","status":"active","updated":"2026-09-28"} -->
-  Goal: merge feat/batch-skill-selection into master and push origin/master directly, as authorized.
-  Verified: clean working tree; both local branches match their remote branches after fetch.
-  Next: fast-forward master, push, and verify remote HEAD. Use master directly for future work in this repo per user instruction.
 
 ## Done
+- Deliver UX changes on master. <!-- tracker: {"id":"master-delivery","status":"done","updated":"2026-09-28"} -->
+  Delivered: feature branch fast-forwarded into master and pushed to origin/master. User-authorized remote feature branch deletion completed; only origin/master remains.
+  Verified: clean working tree before delivery; feature history fully merged. No source changes during merge.
+  Remaining: none. Next: use master directly for future work in this repo, per user instruction.
+
 - Highlight skill names in bold cyan. <!-- tracker: {"id":"skill-name-highlight","status":"done","updated":"2026-09-28"} -->
   Changed: shared labels style only the name; picker applies styling after wrapping and keeps header sanitization; update search no longer colors the whole focused row.
   Verified: four targeted PTY checks pass for color, NO_COLOR, update search, and long wrapped names; affected JS syntax checks and git diff --check pass. No catalog or dependency changes.
