@@ -1,6 +1,10 @@
 # TODO
 
 ## In Progress
+- Deliver UX changes on master. <!-- tracker: {"id":"master-delivery","status":"active","updated":"2026-09-28"} -->
+  Goal: merge feat/batch-skill-selection into master and push origin/master directly, as authorized.
+  Verified: clean working tree; both local branches match their remote branches after fetch.
+  Next: fast-forward master, push, and verify remote HEAD. Use master directly for future work in this repo per user instruction.
 
 ## Done
 - Highlight skill names in bold cyan. <!-- tracker: {"id":"skill-name-highlight","status":"done","updated":"2026-09-28"} -->
