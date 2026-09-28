@@ -3,6 +3,11 @@
 ## In Progress
 
 ## Done
+- Contrast skill names against cyan terminal text. <!-- tracker: {"id":"magenta-skill-names","status":"done","updated":"2026-09-28"} -->
+  Changed: bold magenta names in shared labels and wrapped picker rows, replacing cyan per screenshot feedback.
+  Verified: real PTY picker and confirmation emit bold magenta; affected JS syntax checks and git diff --check pass.
+  Delivery: directly on master. No remaining implementation work or blockers. Next: run skill-installer again to see the new color.
+
 - Deliver UX changes on master. <!-- tracker: {"id":"master-delivery","status":"done","updated":"2026-09-28"} -->
   Delivered: feature branch fast-forwarded into master and pushed to origin/master. User-authorized remote feature branch deletion completed; only origin/master remains.
   Verified: clean working tree before delivery; feature history fully merged. No source changes during merge.

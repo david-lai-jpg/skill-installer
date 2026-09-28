@@ -17,7 +17,7 @@ const terminalText = (text) => String(text)
 /** One consistent, terminal-safe label for skill choices and reviews. */
 export function skillLabel(skill, highlight = true) {
   const name = terminalText(skill.name);
-  const heading = (highlight ? pc.bold(pc.cyan(name)) : name)
+  const heading = (highlight ? pc.bold(pc.magenta(name)) : name)
     + (skill.category ? ` [${terminalText(skill.category)}]` : '');
   return [heading, ...[skill.command, skill.description].filter((text) => text?.trim()).map(terminalText)]
     .join(' ● ');

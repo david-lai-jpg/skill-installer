@@ -25,7 +25,7 @@ function wrapLabel(text, width, nameLength = 0) {
   return lines.map((part) => {
     const end = Math.min(nameLength, part.length);
     nameLength -= end;
-    return end ? pc.bold(pc.cyan(part.slice(0, end))) + part.slice(end) : part;
+    return end ? pc.bold(pc.magenta(part.slice(0, end))) + part.slice(end) : part;
   });
 }
 
