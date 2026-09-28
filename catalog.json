@@ -20,16 +20,6 @@
     "command": "npx skills add https://github.com/anthropics/skills --skill frontend-design"
   },
   {
-    "id": "74685d55-7bc2-40c7-b6b4-988e5c2ffa32",
-    "name": "remotion-best-practices",
-    "command": "npx skills add https://github.com/remotion-dev/skills --skill remotion-best-practices"
-  },
-  {
-    "id": "be3ac778-5f31-4186-8cfb-412c9de5f3db",
-    "name": "agent-browser",
-    "command": "npx skills add https://github.com/vercel-labs/agent-browser --skill agent-browser"
-  },
-  {
     "id": "9ed3c21c-5938-4c28-a858-239917c9367e",
     "name": "vercel-react-composition-patterns",
     "command": "npx skills add https://github.com/vercel-labs/agent-skills --skill vercel-composition-patterns"
@@ -43,16 +33,6 @@
     "id": "ff86559b-8a8d-4097-bcaf-6f465359d157",
     "name": "ui-ux-pro-max-skill",
     "command": "npx skills add https://github.com/nextlevelbuilder/ui-ux-pro-max-skill --skill ui-ux-pro-max"
-  },
-  {
-    "id": "32707b8a-6876-4560-8453-262c7f20cd1f",
-    "name": "obra-brainstorming",
-    "command": "npx skills add https://github.com/obra/superpowers --skill brainstorming"
-  },
-  {
-    "id": "902e263d-c71b-4bd2-8810-b69793c97dfc",
-    "name": "pdf",
-    "command": "npx skills add https://github.com/anthropics/skills --skill pdf"
   },
   {
     "id": "c914768d-84ba-45ff-9d77-d5b660473571",
@@ -70,34 +50,9 @@
     "command": "npx skills add https://github.com/kadajett/agent-nestjs-skills --skill nestjs-best-practices"
   },
   {
-    "id": "ac99e32c-dcd0-4c01-9ff9-2adf1fa60db5",
-    "name": "prisma-postgres",
-    "command": "npx skills add https://github.com/prisma/skills --skill prisma-postgres"
-  },
-  {
-    "id": "99b17738-ae0a-45a4-97b5-d59e682f94c2",
-    "name": "prisma-cli",
-    "command": "npx skills add https://github.com/prisma/skills --skill prisma-cli"
-  },
-  {
     "id": "6a8d04e7-0fe1-418f-b73d-0291e761f5f7",
     "name": "visual-explainer",
     "command": "npx skills add https://github.com/nicobailon/visual-explainer --skill visual-explainer"
-  },
-  {
-    "id": "07f99730-12f1-4692-b6a6-071945ff1b9d",
-    "name": "prisma-client-api",
-    "command": "npx skills add https://github.com/prisma/skills --skill prisma-client-api"
-  },
-  {
-    "id": "6159fd6e-3337-4b03-9737-25a2e546fe58",
-    "name": "prisma-database-setup",
-    "command": "npx skills add https://github.com/prisma/skills --skill prisma-database-setup"
-  },
-  {
-    "id": "d9943ee1-6702-4319-b214-35c68ebf5d91",
-    "name": "prisma-expert",
-    "command": "npx skills add https://github.com/sickn33/antigravity-awesome-skills --skill prisma-expert"
   },
   {
     "id": "a5d41e52-f85c-4baa-a15b-db6bc41dccad",
@@ -110,139 +65,14 @@
     "command": "npx skills add https://github.com/bloominggrace/create-fullstack-service --skill mikro-orm-entity"
   },
   {
-    "id": "b97aafdc-62a9-4904-a3f8-7aeff1e9d93d",
-    "name": "pptx",
-    "command": "npx skills add https://github.com/anthropics/skills --skill pptx"
-  },
-  {
-    "id": "b974048f-8733-472d-a821-185363ee2924",
-    "name": "docx",
-    "command": "npx skills add https://github.com/anthropics/skills --skill docx"
-  },
-  {
-    "id": "aaaa2d55-80b7-406e-9a03-ac1d5190af76",
-    "name": "ai-image-generation-installation",
-    "command": "npx skills add inference-sh/skills@agent-tools"
-  },
-  {
-    "id": "aa0f09c8-d62b-4c77-b6e6-82945d14b03d",
-    "name": "ai-image-generation",
-    "command": "npx skills add https://github.com/inferen-sh/skills --skill ai-image-generation"
-  },
-  {
-    "id": "3ddff06c-bb28-42ba-95a9-7368a9926bfe",
-    "name": "obra-writing-plans",
-    "command": "npx skills add https://github.com/obra/superpowers --skill writing-plans"
-  },
-  {
-    "id": "50b4a28a-295c-4ce1-b0bf-c115f7085303",
-    "name": "xlsx",
-    "command": "npx skills add https://github.com/anthropics/skills --skill xlsx"
-  },
-  {
-    "id": "b3f268d7-4e4d-4d26-807b-e5899c3cc68f",
-    "name": "obra-test-driven-development",
-    "command": "npx skills add https://github.com/obra/superpowers --skill test-driven-development"
-  },
-  {
-    "id": "4be45923-2599-46c8-942a-e268f5ac7aa8",
-    "name": "obra-executing-plans",
-    "command": "npx skills add https://github.com/obra/superpowers --skill executing-plans"
-  },
-  {
-    "id": "42b319c3-e01a-40bf-997b-24bca1d7cfdf",
-    "name": "obra-requesting-code-review",
-    "command": "npx skills add https://github.com/obra/superpowers --skill requesting-code-review"
-  },
-  {
-    "id": "490e044a-c41e-4da4-9d31-da13be03f906",
-    "name": "obra-using-superpowers",
-    "command": "npx skills add https://github.com/obra/superpowers --skill using-superpowers"
-  },
-  {
     "id": "803edb38-4f99-4556-b3ae-8f3d095e5044",
     "name": "mcp-builder",
     "command": "npx skills add https://github.com/anthropics/skills --skill mcp-builder"
   },
   {
-    "id": "e45542e1-cd52-48cc-ad4e-557bdf45a40a",
-    "name": "obra-subagent-driven-development",
-    "command": "npx skills add https://github.com/obra/superpowers --skill subagent-driven-development"
-  },
-  {
     "id": "e9dffbbe-29bd-4f00-9953-83a20d8d82ba",
     "name": "tailwind-design-system",
     "command": "npx skills add https://github.com/wshobson/agents --skill tailwind-design-system"
-  },
-  {
-    "id": "931aa873-091f-44cc-bdee-666eee388ba1",
-    "name": "obra-verification-before-completion",
-    "command": "npx skills add https://github.com/obra/superpowers --skill verification-before-completion"
-  },
-  {
-    "id": "84f09967-dc17-4ea6-9330-10589393fc1b",
-    "name": "shadcn",
-    "command": "npx skills add https://github.com/shadcn/ui --skill shadcn"
-  },
-  {
-    "id": "8f4d01da-df93-4c81-9840-4b77894b5d2c",
-    "name": "obra-writing-skills",
-    "command": "npx skills add https://github.com/obra/superpowers --skill writing-skills"
-  },
-  {
-    "id": "028d6b2f-4d1e-4a94-98d5-48b0f8cbd152",
-    "name": "obra-using-git-worktrees",
-    "command": "npx skills add https://github.com/obra/superpowers --skill using-git-worktrees"
-  },
-  {
-    "id": "dfd1cc91-8817-4dbc-b941-4bf737ae85ff",
-    "name": "obra-dispatching-parallel-agents",
-    "command": "npx skills add https://github.com/obra/superpowers --skill dispatching-parallel-agents"
-  },
-  {
-    "id": "cbc9c571-d72b-4429-bf14-46f5034cf215",
-    "name": "obra-finishing-a-development-branch",
-    "command": "npx skills add https://github.com/obra/superpowers --skill finishing-a-development-branch"
-  },
-  {
-    "id": "da4b3bfc-775c-4bac-af67-65f0a748ba20",
-    "name": "react:components",
-    "command": "npx skills add https://github.com/google-labs-code/stitch-skills --skill react:components"
-  },
-  {
-    "id": "ccd15538-5593-41fa-8711-e2b7ddf95ba6",
-    "name": "doc-coauthoring",
-    "command": "npx skills add https://github.com/anthropics/skills --skill doc-coauthoring"
-  },
-  {
-    "id": "57b22333-11b1-4064-9390-c27cda48d9c6",
-    "name": "system-design-md",
-    "command": "npx skills add https://github.com/google-labs-code/stitch-skills --skill design-md"
-  },
-  {
-    "id": "c85e06dd-2b66-4739-9b0d-64e71d870fa0",
-    "name": "theme-factory",
-    "command": "npx skills add https://github.com/anthropics/skills --skill theme-factory"
-  },
-  {
-    "id": "98cf01c9-d1cc-4689-a4c8-90c3438e236e",
-    "name": "algorithmic-art",
-    "command": "npx skills add https://github.com/anthropics/skills --skill algorithmic-art"
-  },
-  {
-    "id": "0d999d43-647a-4dd6-8ab6-7153c2f935f6",
-    "name": "git-commit",
-    "command": "npx skills add https://github.com/github/awesome-copilot --skill git-commit"
-  },
-  {
-    "id": "3025712d-b8b0-4336-9938-103e6138795c",
-    "name": "typescript-advanced-types",
-    "command": "npx skills add https://github.com/wshobson/agents --skill typescript-advanced-types"
-  },
-  {
-    "id": "db01eb87-bbb8-4022-abdb-8f0713e60137",
-    "name": "enhance-prompt",
-    "command": "npx skills add https://github.com/google-labs-code/stitch-skills --skill enhance-prompt"
   },
   {
     "id": "27fefe30-feac-4619-8194-44c21251a1fc",
@@ -255,11 +85,6 @@
     "command": "npx skills add https://github.com/pbakaus/impeccable --skill critique"
   },
   {
-    "id": "c56d4921-2ebc-4531-8b7f-acc8f8ccb347",
-    "name": "onboard",
-    "command": "npx skills add https://github.com/pbakaus/impeccable --skill onboard"
-  },
-  {
     "id": "96cc5026-d745-4446-ac22-49c1319c5282",
     "name": "impeccable",
     "command": "npx impeccable install"
@@ -270,34 +95,9 @@
     "command": "npx skills add https://github.com/pbakaus/impeccable --skill quieter"
   },
   {
-    "id": "6164a49f-480a-4bce-a11e-c714189e29f5",
-    "name": "shadcn-ui",
-    "command": "npx skills add https://github.com/google-labs-code/stitch-skills --skill shadcn-ui"
-  },
-  {
-    "id": "55b77190-dc71-4455-be7d-2ebc0f0b8d99",
-    "name": "gh-cli",
-    "command": "npx skills add https://github.com/github/awesome-copilot --skill gh-cli"
-  },
-  {
     "id": "31b05122-ccbe-49c6-aa74-46b2d89f9499",
     "name": "turborepo",
     "command": "npx skills add https://github.com/vercel/turborepo --skill turborepo"
-  },
-  {
-    "id": "55bff713-5315-4338-8d01-b37e22a25150",
-    "name": "responsive-design",
-    "command": "npx skills add https://github.com/wshobson/agents --skill responsive-design"
-  },
-  {
-    "id": "48bd7eba-a8ce-49b4-b4bb-f606528efe7f",
-    "name": "prd",
-    "command": "npx skills add https://github.com/github/awesome-copilot --skill prd"
-  },
-  {
-    "id": "b7e5fc23-47e3-4265-9214-c8e1ef299f06",
-    "name": "refactor",
-    "command": "npx skills add https://github.com/github/awesome-copilot --skill refactor"
   },
   {
     "id": "4a4745a8-acbd-4e08-bb09-76dd1fae80f8",
@@ -305,34 +105,9 @@
     "command": "npx skills add https://github.com/wshobson/agents --skill architecture-patterns"
   },
   {
-    "id": "7a0918b9-47c7-4d06-a3d4-025a871dfad9",
-    "name": "prompt-engineering-patterns",
-    "command": "npx skills add https://github.com/wshobson/agents --skill prompt-engineering-patterns"
-  },
-  {
     "id": "06a8af5d-689b-41fd-8d38-102dbc303741",
     "name": "postgresql-table-design",
     "command": "npx skills add https://github.com/wshobson/agents --skill postgresql-table-design"
-  },
-  {
-    "id": "b35e033d-bf3e-4d63-9514-31b88df34d15",
-    "name": "playwright-cli",
-    "command": "npx skills add https://github.com/microsoft/playwright-cli --skill playwright-cli"
-  },
-  {
-    "id": "469626a5-15ac-43fa-8991-1407e48c0ae2",
-    "name": "obra-remembering-conversations",
-    "command": "npx skills add https://github.com/obra/episodic-memory --skill remembering-conversations"
-  },
-  {
-    "id": "d436d64d-25b0-404a-8fde-585c7c2ce2c1",
-    "name": "electron",
-    "command": "npx skills add https://github.com/vercel-labs/agent-browser --skill electron"
-  },
-  {
-    "id": "6a2f9ce2-cf07-4c64-a953-069942187989",
-    "name": "docker-expert",
-    "command": "npx skills add https://github.com/sickn33/antigravity-awesome-skills --skill docker-expert"
   },
   {
     "id": "1e8343c7-f6da-4cd5-b9df-100d5221f712",
@@ -380,11 +155,6 @@
     "command": "npx skills add https://github.com/wshobson/agents --skill monorepo-management"
   },
   {
-    "id": "1d3cd73e-66d9-4803-af26-3f4c2b165084",
-    "name": "obsidian-cli",
-    "command": "npx skills add https://github.com/kepano/obsidian-skills --skill obsidian-cli"
-  },
-  {
     "id": "87cdea59-273b-406f-a263-3af281a972f8",
     "name": "lighthouse-performance",
     "command": "npx skills add https://github.com/addyosmani/web-quality-skills --skill performance"
@@ -395,19 +165,9 @@
     "command": "npx skills add https://github.com/vuejs-ai/skills --skill vue-best-practices"
   },
   {
-    "id": "8fabd05e-067c-445b-b596-dfc61e9dbbb8",
-    "name": "auth-implementation-patterns",
-    "command": "npx skills add https://github.com/wshobson/agents --skill auth-implementation-patterns"
-  },
-  {
     "id": "6e4d3e43-24fb-4ee1-b02a-16ba4a25c15d",
     "name": "architecture-decision-records",
     "command": "npx skills add https://github.com/wshobson/agents --skill architecture-decision-records"
-  },
-  {
-    "id": "9694e265-35d3-46f5-aca4-3283bc53c6db",
-    "name": "microservice-patterns",
-    "command": "npx skills add https://github.com/wshobson/agents --skill microservices-patterns"
   },
   {
     "id": "93c2f2fe-7b8e-4928-8b9d-e0a69d1edfb1",
@@ -425,19 +185,9 @@
     "command": "npx skills add https://github.com/vuejs-ai/skills --skill vue-debug-guides"
   },
   {
-    "id": "fe52eebd-74c6-4ab2-861c-e7f7433552d1",
-    "name": "seo",
-    "command": "npx skills add https://github.com/addyosmani/web-quality-skills --skill seo"
-  },
-  {
     "id": "8796fe05-0d18-4c7a-8226-ab5b7eadf6da",
     "name": "nuxt-ui",
     "command": "npx skills add https://github.com/nuxt/ui --skill nuxt-ui"
-  },
-  {
-    "id": "e546ed42-78cc-4a22-8380-d8f97c3904c5",
-    "name": "clean-code",
-    "command": "npx skills add https://github.com/sickn33/antigravity-awesome-skills --skill clean-code"
   },
   {
     "id": "d49998d2-b7b2-49b5-a9d0-27ea87612ad2",
@@ -448,16 +198,6 @@
     "id": "e3f93bf2-2a94-455a-b4b8-1ee89f45046a",
     "name": "resume-writer",
     "command": "npx skills add resumx/skills"
-  },
-  {
-    "id": "a04e37de-82f9-4398-bae7-8b6e5d565c0d",
-    "name": "docs-translator",
-    "command": "npx skills add https://github.com/github/awesome-copilot --skill mkdocs-translations"
-  },
-  {
-    "id": "9789dc93-bbb5-49c3-a52f-0cc4b2844a38",
-    "name": "webapp-testing",
-    "command": "npx skills add https://github.com/anthropics/skills --skill webapp-testing"
   },
   {
     "id": "e8bfd439-7349-4c29-88fc-c2f3c7773e3c",
