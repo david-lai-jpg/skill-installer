@@ -1,13 +1,15 @@
 # TODO
 
 ## In Progress
-- Show skill details in every skill-selection interface. <!-- tracker: {"id":"skill-choice-details","status":"active","updated":"2026-09-28"} -->
+
+## Done
+- Show skill details in every skill-selection interface. <!-- tracker: {"id":"skill-choice-details","status":"done","updated":"2026-09-28"} -->
   Changed: shared terminal-safe name/category, command, and optional description label with prominent bullets; install/delete picker and review lists, update search, list, duplicate warning, and import conflicts. Wrapped picker rows with PgUp/PgDn detail scrolling; README and terminal checks updated.
   Verified: all 29 disposable PTY scenarios pass, including optional descriptions, narrow terminals, and long-detail scrolling; affected JS syntax checks and git diff --check pass. Catalog and dependencies unchanged.
   Review: fresh astra review found inaccessible overflowing detail; corrected and independently verified in a 40x12 terminal. No remaining material findings.
-  Remaining: commit and push. Next: deliver on feat/batch-skill-selection; no PR requested.
+  Delivered: implementation commit 546dd8b pushed to origin/feat/batch-skill-selection.
+  Remaining: none. Next: run skill-installer; existing linked install uses the updated labels. No PR requested.
 
-## Done
 - Complete five CLI UX improvements. <!-- tracker: {"id":"cli-ux-followup","status":"done","updated":"2026-09-28"} -->
   Changed: searchable persistent batch picker; one install selection screen; launch menu; recoverable add/update input; multi-field draft with Save/Cancel; fail-closed catalog reads and validation before writes/imports; usage docs and terminal checks.
   Verified: 23-scenario PTY suite plus targeted menu-to-install scenario (24 total); all affected JS syntax checks; git diff --check. Real catalog and dependencies unchanged.
