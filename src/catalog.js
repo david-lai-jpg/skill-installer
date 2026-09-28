@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import crypto from 'node:crypto';
 import { input, confirm, select, search } from '@inquirer/prompts';
+import { selectSkills } from './selection.js';
 import { CATALOG_PATH, log } from './utils.js';
 import { hasRemote, syncCatalog } from './git.js';
 
@@ -174,32 +175,7 @@ export async function del() {
     return;
   }
 
-  const ids = [];
-  while (true) {
-    const remaining = catalog.filter((s) => !ids.includes(s.id));
-    if (remaining.length === 0) break;
-
-    const skillId = await search({
-      message: `Search skill to delete (${remaining.length} left):`,
-      source: (term) => {
-        const q = (term || '').toLowerCase();
-        return remaining
-          .filter((s) => {
-            if (!q) return true;
-            return [s.name, s.category, s.description, ...(s.tags || [])].join(' ').toLowerCase().includes(q);
-          })
-          .sort((a, b) => a.name.localeCompare(b.name))
-          .map((s) => ({ name: s.name, value: s.id }));
-      },
-    });
-
-    ids.push(skillId);
-    log.warn(`- ${catalog.find((s) => s.id === skillId).name}`);
-
-    if (remaining.length <= 1) break;
-    const more = await confirm({ message: 'Delete another?', default: false });
-    if (!more) break;
-  }
+  const ids = await selectSkills(catalog, 'Select skills to remove from the catalog:');
 
   if (ids.length === 0) {
     log.dim('Nothing selected.');
@@ -207,7 +183,9 @@ export async function del() {
   }
 
   const names = catalog.filter((s) => ids.includes(s.id)).map((s) => s.name);
-  const ok = await confirm({ message: `Delete ${names.join(', ')}?` });
+  console.log('\nSkills to remove from the catalog:');
+  for (const name of names) console.log(`  ${name}`);
+  const ok = await confirm({ message: `Remove ${names.length} skill(s) from the catalog?`, default: false });
   if (!ok) return;
 
   const filtered = catalog.filter((s) => !ids.includes(s.id));

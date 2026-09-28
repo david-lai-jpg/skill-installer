@@ -1,6 +1,7 @@
 import { spawn } from 'node:child_process';
-import { confirm, select, search } from '@inquirer/prompts';
+import { confirm, select } from '@inquirer/prompts';
 import pc from 'picocolors';
+import { selectSkills } from './selection.js';
 import { loadCatalog } from './catalog.js';
 import { log } from './utils.js';
 
@@ -62,49 +63,8 @@ export async function install() {
     }
   }
 
-  // Search-and-select loop
-  const selected = [];
-  const selectedIds = new Set();
-
-  while (true) {
-    const remaining = pool.filter((s) => !selectedIds.has(s.id));
-    if (remaining.length === 0) {
-      log.dim('All skills selected.');
-      break;
-    }
-
-    if (selected.length > 0) {
-      console.log(pc.dim(`Selected so far: ${selected.map((s) => s.name).join(', ')}`));
-    }
-
-    const skillId = await search({
-      message: `Search skills (${remaining.length} available):`,
-      source: (term) => {
-        const q = (term || '').toLowerCase();
-        return remaining
-          .filter((s) => {
-            if (!q) return true;
-            const haystack = [s.name, s.category, s.description, ...(s.tags || [])].join(' ').toLowerCase();
-            return haystack.includes(q);
-          })
-          .sort((a, b) => a.name.localeCompare(b.name))
-          .map((s) => {
-            const cat = s.category ? pc.dim(`[${s.category}]`) : '';
-            const desc = s.description ? pc.dim(` — ${s.description}`) : '';
-            return { name: `${s.name} ${cat}${desc}`, value: s.id };
-          });
-      },
-    });
-
-    const skill = pool.find((s) => s.id === skillId);
-    selected.push(skill);
-    selectedIds.add(skill.id);
-    log.success(`+ ${skill.name}`);
-
-    if (remaining.length <= 1) break;
-    const more = await confirm({ message: 'Add another skill?', default: true });
-    if (!more) break;
-  }
+  const ids = await selectSkills(pool, 'Select skills to install:');
+  const selected = ids.map((id) => pool.find((skill) => skill.id === id));
 
   if (selected.length === 0) {
     log.dim('Nothing selected.');

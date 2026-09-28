@@ -56,7 +56,7 @@ Select a skill from the catalog, then choose which field to edit.
 
 ### `skill-installer delete`
 
-Multi-select skills to remove with confirmation.
+Optionally filter by name, category, tag, or description (Enter shows all), then select skills in one checkbox list: use ↑/↓ to move, Space to toggle, A to select or clear all, and Enter to review. Submit an empty selection or press Ctrl+C to cancel. Review the selected names before confirming removal (defaults to No). This removes catalog entries, not installed skill files.
 
 ### `skill-installer list`
 
@@ -73,7 +73,7 @@ skill-installer list --tag performance  # by tag
 The main event. Interactive flow:
 
 1. **Optional filter** — narrow by category or tag
-2. **Checkbox selection** — pick skills from a grouped list
+2. **Checkbox selection** — optionally narrow by search text, then pick multiple skills from an alphabetical list with categories; use Space to toggle, A to select or clear all, and Enter to review
 3. **Confirm** — review commands before running
 4. **Execute** — runs each command sequentially with `stdio: inherit` (supports interactive installers)
 5. **Summary** — final report of what succeeded/failed
@@ -149,3 +149,7 @@ skill-installer/
 ## License
 
 MIT
+
+## Verification
+
+Run `python3 tests/cli-selection.py` to check batch selection, cancellation, deletion, and installation in disposable catalogs through a real terminal. Requires Python 3 and Git.
