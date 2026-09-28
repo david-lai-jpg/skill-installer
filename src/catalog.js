@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import crypto from 'node:crypto';
 import { input, confirm, select, search } from '@inquirer/prompts';
 import { selectSkills } from './selection.js';
-import { CATALOG_PATH, log } from './utils.js';
+import { CATALOG_PATH, log, skillLabel } from './utils.js';
 import { hasRemote, syncCatalog } from './git.js';
 
 export function loadCatalog() {
@@ -106,7 +106,7 @@ export async function add() {
   // Warn on duplicate command
   const dup = catalog.find((s) => s.command === command.trim());
   if (dup) {
-    log.warn(`⚠ This command matches existing skill "${dup.name}".`);
+    log.warn(`⚠ This command matches: ${skillLabel(dup)}`);
     const proceed = await confirm({ message: 'Add anyway?' });
     if (!proceed) return;
   }
@@ -152,7 +152,7 @@ export async function update() {
           return [s.name, s.category, s.description, ...(s.tags || [])].join(' ').toLowerCase().includes(q);
         })
         .sort((a, b) => a.name.localeCompare(b.name))
-        .map((s) => ({ name: s.name, value: s.id }));
+        .map((s) => ({ name: skillLabel(s), value: s.id }));
     },
   });
 
@@ -214,15 +214,15 @@ export async function del() {
     return;
   }
 
-  const names = catalog.filter((s) => ids.includes(s.id)).map((s) => s.name);
+  const selected = catalog.filter((s) => ids.includes(s.id));
   console.log('\nSkills to remove from the catalog:');
-  for (const name of names) console.log(`  ${name}`);
-  const ok = await confirm({ message: `Remove ${names.length} skill(s) from the catalog?`, default: false });
+  for (const skill of selected) console.log(`  ${skillLabel(skill)}`);
+  const ok = await confirm({ message: `Remove ${selected.length} skill(s) from the catalog?`, default: false });
   if (!ok) return;
 
   const filtered = catalog.filter((s) => !ids.includes(s.id));
   saveCatalog(filtered);
-  log.success(`✓ Deleted ${names.length} skill(s)`);
+  log.success(`✓ Deleted ${selected.length} skill(s)`);
 
   await syncCatalog();
 }
@@ -258,11 +258,8 @@ export function list(args) {
 
   console.log('');
   for (const s of sorted) {
-    const cat = s.category ? ` [${s.category}]` : '';
     const tags = s.tags?.length ? ` (${s.tags.join(', ')})` : '';
-    console.log(`  ${s.name}${cat}${tags}`);
-    console.log(`    ${s.command}`);
-    if (s.description) console.log(`    ${s.description}`);
+    console.log(`  ${skillLabel(s)}${tags}`);
     console.log('');
   }
   console.log(`  ${filtered.length} skill(s)`);
@@ -304,8 +301,10 @@ export async function importCatalog(filePath) {
   for (const entry of incoming) {
     const existing = catalog.find((s) => s.name === entry.name);
     if (existing) {
+      console.log(`Existing: ${skillLabel(existing)}`);
+      console.log(`Incoming: ${skillLabel(entry)}`);
       const action = await select({
-        message: `"${entry.name}" already exists. What to do?`,
+        message: `Skill already exists. What to do?`,
         choices: [
           { name: 'Skip', value: 'skip' },
           { name: 'Overwrite', value: 'overwrite' },

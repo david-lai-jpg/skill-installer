@@ -1,5 +1,6 @@
 """Run with python3 tests/cli-selection.py. Uses disposable catalogs and real terminal input."""
 import errno
+import fcntl
 import json
 import os
 from pathlib import Path
@@ -9,6 +10,8 @@ import shutil
 import signal
 import subprocess
 import tempfile
+import termios
+import struct
 import time
 
 artifact_fd, artifact_path = tempfile.mkstemp(prefix='skill-installer-ux-', suffix='.log')
@@ -20,9 +23,10 @@ ENV = {k: v for k, v in os.environ.items() if not k.startswith('GIT_')}
 ENV.update(TERM='xterm', NO_COLOR='1', GIT_CONFIG_NOSYSTEM='1', GIT_CONFIG_GLOBAL='/dev/null')
 SKILLS = [dict(id=name, name=name, command=f'echo {name} >> installed.txt')
           for name in ['Charlie', 'Alpha', 'Bravo']]
+SKILLS[1]['description'] = 'Alpha skill description'
 
 
-def scenario(command, actions, remaining, installed=None, empty=False, fields=None, raw=None, exit_code=0):
+def scenario(command, actions, remaining, installed=None, empty=False, fields=None, raw=None, exit_code=0, expected_output=(), columns=80, rows=24):
     with tempfile.TemporaryDirectory(prefix='skill-selection-') as directory:
         root = Path(directory)
         for folder in ['src', 'bin']:
@@ -39,6 +43,7 @@ def scenario(command, actions, remaining, installed=None, empty=False, fields=No
             subprocess.run(['git', '-C', directory, *args], env=ENV, check=True,
                            stdout=subprocess.DEVNULL, stderr=subprocess.PIPE)
         master, slave = pty.openpty()
+        fcntl.ioctl(slave, termios.TIOCSWINSZ, struct.pack("HHHH", rows, columns, 0, 0))
         process = subprocess.Popen(['node', 'bin/cli.js', *([command] if command else [])], cwd=root, env=ENV,
                                    stdin=slave, stdout=slave, stderr=slave, start_new_session=True)
         os.close(slave)
@@ -84,6 +89,9 @@ def scenario(command, actions, remaining, installed=None, empty=False, fields=No
                         if error.errno != errno.EIO:
                             raise
             assert process.poll() == exit_code, output
+            unwrapped = output.replace('\r', '').replace('\n      ', '')
+            for text in expected_output:
+                assert text in unwrapped, f'Missing {text!r}: {output}'
             if '\x1b[?1049h' in output:
                 assert '\x1b[?1049l' in output, 'Terminal not restored'
                 assert '\x1b[?25h' in output, 'Cursor not restored'
@@ -153,4 +161,14 @@ try:
 finally:
     os.close(master)
     os.close(slave)
-print(f'PASS: 24 terminal scenarios; disposable catalogs only. Transcript: {ARTIFACT}')
+scenario('delete', [('Select skills to remove', 'Alpha \r'), ('Remove 1 skill(s)', 'n\r')], original, expected_output=('Alpha ● echo Alpha >> installed.txt ● Alpha skill description', 'Bravo ● echo Bravo >> installed.txt'))
+scenario('install', [('Select skills to install', 'Alpha \r'), ('Install these 1 skill(s)?', 'n\r')], original, expected_output=('Alpha ● echo Alpha >> installed.txt ● Alpha skill description',))
+scenario('update', [('Search skill to update', 'Alpha'), ('Alpha skill description', '\x03'), ('Cancelled.', '')], original, expected_output=('Alpha ● echo Alpha >> installed.txt ● Alpha skill description',))
+scenario('delete', [('Select skills to remove', '\x01\r'), ('Remove 3 skill(s)', 'n\r')], original, columns=40, expected_output=('Alpha ● echo Alpha >> installed.txt ● Alpha skill description', 'Bravo ● echo Bravo >> installed.txt'))
+original_command = SKILLS[1]['command']
+SKILLS[1]['command'] = 'echo ' + 'x' * 145 + 'TAIL'
+try:
+    scenario('delete', [('Select skills to remove', 'Alpha'), ('1 matches', '\x1b[6~'), ('TAIL', '\x03'), ('Cancelled.', '')], original, columns=40, rows=12, expected_output=('Alpha skill description',))
+finally:
+    SKILLS[1]['command'] = original_command
+print(f'PASS: 29 terminal scenarios; disposable catalogs only. Transcript: {ARTIFACT}')

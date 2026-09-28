@@ -58,7 +58,7 @@ Select a skill, edit as many fields as needed, then choose **Save**. **Cancel** 
 
 ### `skill-installer delete`
 
-Search and select in one list. Checked skills stay selected when the search changes.
+Search and select in one list. Each skill shows `name ● install command ● description` (description is omitted when absent). Long entries wrap to the terminal width; Page Up/Page Down scroll the focused skill’s details if they exceed the window height. The same details appear in update search, confirmation lists, catalog listing, and import conflict choices. Checked skills stay selected when the search changes.
 
 - Type to filter by name, category, tag, or description; Backspace edits the search.
 - Use ↑/↓ to move and Space to toggle a skill.

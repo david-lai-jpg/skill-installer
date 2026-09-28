@@ -1,9 +1,8 @@
 import { spawn } from 'node:child_process';
 import { confirm } from '@inquirer/prompts';
-import pc from 'picocolors';
 import { selectSkills } from './selection.js';
 import { loadCatalog } from './catalog.js';
-import { log } from './utils.js';
+import { log, skillLabel } from './utils.js';
 
 function runCommand(command) {
   return new Promise((resolve) => {
@@ -34,7 +33,7 @@ export async function install() {
   // Confirmation
   console.log('\nSkills to install:');
   for (const s of selected) {
-    console.log(`  ${s.name}: ${pc.dim(s.command)}`);
+    console.log(`  ${skillLabel(s)}`);
   }
 
   const ok = await confirm({ message: `Install these ${selected.length} skill(s)?` });

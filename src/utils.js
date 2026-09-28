@@ -11,6 +11,14 @@ export const TOOL_ROOT = path.resolve(__dirname, '..');
 /** Absolute path to catalog.json */
 export const CATALOG_PATH = path.join(TOOL_ROOT, 'catalog.json');
 
+/** One consistent, terminal-safe label for skill choices and reviews. */
+export function skillLabel(skill) {
+  const name = skill.category ? `${skill.name} [${skill.category}]` : skill.name;
+  return [name, skill.command, skill.description].filter((text) => text?.trim())
+    .join(' ● ')
+    .replace(/[\x00-\x1f\x7f-\x9f]/g, (char) => `\\u${char.charCodeAt(0).toString(16).padStart(4, '0')}`);
+}
+
 export const log = {
   success: (msg) => console.log(pc.green(msg)),
   error: (msg) => console.log(pc.red(msg)),
