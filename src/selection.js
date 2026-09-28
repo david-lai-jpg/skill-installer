@@ -1,4 +1,5 @@
 import readline from 'node:readline';
+import pc from 'picocolors';
 import { skillLabel } from './utils.js';
 
 // Keep catalog text from being interpreted as terminal control sequences.
@@ -6,7 +7,7 @@ const display = (text) => String(text).replace(/[\x00-\x1f\x7f-\x9f]/g, '');
 
 // Conservatively reserve two columns for non-ASCII graphemes (CJK/emoji).
 // This can leave spare space for accented text, but never splits a grapheme.
-function wrapLabel(text, width) {
+function wrapLabel(text, width, nameLength = 0) {
   const lines = [];
   let line = '';
   let columns = 0;
@@ -21,7 +22,11 @@ function wrapLabel(text, width) {
     columns += size;
   }
   lines.push(line);
-  return lines;
+  return lines.map((part) => {
+    const end = Math.min(nameLength, part.length);
+    nameLength -= end;
+    return end ? pc.bold(pc.cyan(part.slice(0, end))) + part.slice(end) : part;
+  });
 }
 
 export function selectSkills(skills, message) {
@@ -50,7 +55,7 @@ export function selectSkills(skills, message) {
       const visible = matches();
       const height = Math.max(1, (stdout.rows || 24) - 7);
       const width = Math.max(2, (stdout.columns || 80) - 6);
-      const entries = visible.map((skill, index) => wrapLabel(skillLabel(skill), width)
+      const entries = visible.map((skill, index) => wrapLabel(skillLabel(skill, false), width, skillLabel({ name: skill.name }, false).length)
         .map((line, part) => `${part ? '      ' : `${index === active ? '›' : ' '} [${selected.has(skill.id) ? 'x' : ' '}] `}${line}`));
       firstVisible = Math.min(firstVisible, active);
       while (firstVisible < active && entries.slice(firstVisible, active + 1).flat().length > height) firstVisible++;
@@ -59,9 +64,9 @@ export function selectSkills(skills, message) {
       const rows = entries.slice(firstVisible).flat().slice(detailOffset, detailOffset + height);
       const lines = [message, `Search: ${query}`, `${selected.size} selected · ${visible.length} matches`,
         'Type to filter · ↑↓ move · Space toggle · Ctrl+A toggle matches',
-        'Ctrl+U clear search · Enter review · Esc/Ctrl+C cancel', 'PgUp/PgDn scroll skill details',
-        ...(rows.length ? rows : ['No matches. Edit your search or press Ctrl+U.'])];
-      stdout.write('\x1b[H\x1b[2J' + lines.map(display).join('\r\n'));
+        'Ctrl+U clear search · Enter review · Esc/Ctrl+C cancel', 'PgUp/PgDn scroll skill details'].map(display);
+      lines.push(...(rows.length ? rows : ['No matches. Edit your search or press Ctrl+U.']));
+      stdout.write('\x1b[H\x1b[2J' + lines.join('\r\n'));
     }
 
     function cleanup() {
@@ -107,7 +112,7 @@ export function selectSkills(skills, message) {
       else if (key.name === 'down') active = Math.min(Math.max(0, visible.length - 1), active + 1);
       else if (key.name === 'pagedown' || key.name === 'pageup') {
         const height = Math.max(1, (stdout.rows || 24) - 7);
-        const count = visible[active] ? wrapLabel(skillLabel(visible[active]), Math.max(2, (stdout.columns || 80) - 6)).length : 0;
+        const count = visible[active] ? wrapLabel(skillLabel(visible[active], false), Math.max(2, (stdout.columns || 80) - 6)).length : 0;
         detailOffset = Math.max(0, Math.min(Math.max(0, count - height), detailOffset + (key.name === 'pagedown' ? height : -height)));
       }
       else if (key.name === 'space') {

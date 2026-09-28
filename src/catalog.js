@@ -144,6 +144,7 @@ export async function update() {
 
   const skillId = await search({
     message: 'Search skill to update:',
+    theme: { style: { highlight: (text) => text } },
     source: (term) => {
       const q = (term || '').toLowerCase();
       return [...catalog]
