@@ -70,44 +70,14 @@
     "command": "npx skills add https://github.com/anthropics/skills --skill mcp-builder"
   },
   {
-    "id": "e9dffbbe-29bd-4f00-9953-83a20d8d82ba",
-    "name": "tailwind-design-system",
-    "command": "npx skills add https://github.com/wshobson/agents --skill tailwind-design-system"
-  },
-  {
-    "id": "27fefe30-feac-4619-8194-44c21251a1fc",
-    "name": "ui-polish",
-    "command": "npx skills add https://github.com/pbakaus/impeccable --skill polish"
-  },
-  {
-    "id": "9e204026-50f6-44cc-a833-7065515d9a5d",
-    "name": "ui-critique",
-    "command": "npx skills add https://github.com/pbakaus/impeccable --skill critique"
-  },
-  {
     "id": "96cc5026-d745-4446-ac22-49c1319c5282",
     "name": "impeccable",
     "command": "npx impeccable install"
   },
   {
-    "id": "ee150275-f10d-4b58-b241-2e4771298492",
-    "name": "ui-quieter",
-    "command": "npx skills add https://github.com/pbakaus/impeccable --skill quieter"
-  },
-  {
     "id": "31b05122-ccbe-49c6-aa74-46b2d89f9499",
     "name": "turborepo",
     "command": "npx skills add https://github.com/vercel/turborepo --skill turborepo"
-  },
-  {
-    "id": "4a4745a8-acbd-4e08-bb09-76dd1fae80f8",
-    "name": "architecture-patterns",
-    "command": "npx skills add https://github.com/wshobson/agents --skill architecture-patterns"
-  },
-  {
-    "id": "06a8af5d-689b-41fd-8d38-102dbc303741",
-    "name": "postgresql-table-design",
-    "command": "npx skills add https://github.com/wshobson/agents --skill postgresql-table-design"
   },
   {
     "id": "1e8343c7-f6da-4cd5-b9df-100d5221f712",
@@ -120,39 +90,14 @@
     "command": "pnpx skills add antfu/skills --skill='*'"
   },
   {
-    "id": "be9f727f-f552-4a37-985b-582109da6d13",
-    "name": "sql-optimization-pattern",
-    "command": "npx skills add https://github.com/wshobson/agents --skill sql-optimization-patterns"
-  },
-  {
     "id": "ba31d1d8-9fd8-486b-8da3-e13d37fb7a87",
     "name": "angular-component",
     "command": "npx skills add https://github.com/analogjs/angular-skills --skill angular-component"
   },
   {
-    "id": "8c992085-16d5-4110-98bc-a53561cd532e",
-    "name": "mentoring-junior",
-    "command": "npx skills add https://github.com/github/awesome-copilot --skill mentoring-juniors"
-  },
-  {
-    "id": "a49bffc4-0549-47a6-976f-bea20bbcf9fd",
-    "name": "noob-mode",
-    "command": "npx skills add https://github.com/github/awesome-copilot --skill noob-mode"
-  },
-  {
     "id": "f6ebf817-dafb-48c6-8e17-2960be3e4be8",
     "name": "implement-figma-design",
     "command": "npx skills add https://github.com/figma/mcp-server-guide --skill implement-design"
-  },
-  {
-    "id": "a183ff8b-fe78-4257-8487-6b651447259c",
-    "name": "design-system-patterns",
-    "command": "npx skills add https://github.com/wshobson/agents --skill design-system-patterns"
-  },
-  {
-    "id": "d8c01138-6b2b-4c14-9c82-026079c77fc0",
-    "name": "monorepo-management",
-    "command": "npx skills add https://github.com/wshobson/agents --skill monorepo-management"
   },
   {
     "id": "87cdea59-273b-406f-a263-3af281a972f8",
@@ -163,16 +108,6 @@
     "id": "caa75fb2-b87e-44a9-a6bb-d3a6c06ca652",
     "name": "vue-best-practices",
     "command": "npx skills add https://github.com/vuejs-ai/skills --skill vue-best-practices"
-  },
-  {
-    "id": "6e4d3e43-24fb-4ee1-b02a-16ba4a25c15d",
-    "name": "architecture-decision-records",
-    "command": "npx skills add https://github.com/wshobson/agents --skill architecture-decision-records"
-  },
-  {
-    "id": "93c2f2fe-7b8e-4928-8b9d-e0a69d1edfb1",
-    "name": "deployment-pipeline-design",
-    "command": "npx skills add https://github.com/wshobson/agents --skill deployment-pipeline-design"
   },
   {
     "id": "bd9cdcc7-4acf-4ec4-9aee-9e73fb587efa",
@@ -188,11 +123,6 @@
     "id": "8796fe05-0d18-4c7a-8226-ab5b7eadf6da",
     "name": "nuxt-ui",
     "command": "npx skills add https://github.com/nuxt/ui --skill nuxt-ui"
-  },
-  {
-    "id": "d49998d2-b7b2-49b5-a9d0-27ea87612ad2",
-    "name": "code-reviewer",
-    "command": "npx skills add https://github.com/google-gemini/gemini-cli --skill code-reviewer"
   },
   {
     "id": "e3f93bf2-2a94-455a-b4b8-1ee89f45046a",
