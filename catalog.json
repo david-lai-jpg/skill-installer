@@ -593,5 +593,10 @@
     "id": "ad7b02e7-25ff-4518-9c52-2af2abbc19b9",
     "name": "humanizer",
     "command": "npx skills add blader/humanizer --global"
+  },
+  {
+    "id": "b90e0f98-3a02-45e2-972e-f8d548edb37a",
+    "name": "pstack",
+    "command": "npx skills add backnotprop/pstack"
   }
 ]
