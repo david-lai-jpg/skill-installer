@@ -268,10 +268,5 @@
     "id": "b90e0f98-3a02-45e2-972e-f8d548edb37a",
     "name": "pstack",
     "command": "npx skills add backnotprop/pstack"
-  },
-  {
-    "id": "c14d860b-9670-4d47-9d55-06b81f81ab6e",
-    "name": "optimizse-github-actions",
-    "command": "npx skills add enesgules/dotfiles --skill optimise-github-actions"
   }
 ]
