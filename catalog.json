@@ -285,5 +285,10 @@
       "Frontend"
     ],
     "description": "emil kowalski's design skills"
+  },
+  {
+    "id": "ab44691e-5a5b-4f7b-9c8b-5646a486b244",
+    "name": "humanlayer-skills",
+    "command": "npx skills add humanlayer/skills"
   }
 ]
