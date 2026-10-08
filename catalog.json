@@ -273,5 +273,17 @@
     "id": "ad700abb-a6e6-4964-bdd0-a163b001ae74",
     "name": "optimise-github-actions",
     "command": "npx skills add enesgules/dotfiles --skill optimise-github-actions"
+  },
+  {
+    "id": "079aa5ed-c721-4b8d-aad7-843e6ceeb2f7",
+    "name": "emilkowalski-skills",
+    "command": "npx skills@latest add emilkowalski/skills",
+    "category": "UI, Design, Frontend",
+    "tags": [
+      "UI",
+      "Design",
+      "Frontend"
+    ],
+    "description": "emil kowalski's design skills"
   }
 ]
