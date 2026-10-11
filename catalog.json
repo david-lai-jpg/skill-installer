@@ -290,5 +290,10 @@
     "id": "ab44691e-5a5b-4f7b-9c8b-5646a486b244",
     "name": "humanlayer-skills",
     "command": "npx skills add humanlayer/skills"
+  },
+  {
+    "id": "5c4c2b03-5da4-4379-b90e-78b9b8a5f900",
+    "name": "diagram-design",
+    "command": "npx skills add cathrynlavery/diagram-design"
   }
 ]
