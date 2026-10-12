@@ -295,5 +295,10 @@
     "id": "5c4c2b03-5da4-4379-b90e-78b9b8a5f900",
     "name": "diagram-design",
     "command": "npx skills add cathrynlavery/diagram-design"
+  },
+  {
+    "id": "a40405bb-bfa0-4b1d-8468-781ea71d60d7",
+    "name": "herdr",
+    "command": "npx skills add herdrdev/herdr --skill herdr -g"
   }
 ]
