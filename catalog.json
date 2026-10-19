@@ -300,5 +300,10 @@
     "id": "a40405bb-bfa0-4b1d-8468-781ea71d60d7",
     "name": "herdr",
     "command": "npx skills add herdrdev/herdr --skill herdr -g"
+  },
+  {
+    "id": "9ddeab25-a9a4-47cc-958a-6f50d1556b1f",
+    "name": "game-feel",
+    "command": "npx skills add ronniebasak/game-feel-skill"
   }
 ]
